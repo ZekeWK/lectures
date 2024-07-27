@@ -1,0 +1,80 @@
+\documentclass[a4paper]{article}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5pt}
+
+%\usepackage[backend=biber, style=apa]{biblatex}
+%\usepackage{csquotes}
+%\addbibresource{sources.bib}
+
+\usepackage{mathtools}
+
+\usepackage{graphicx}
+
+\usepackage{amsthm} 
+
+\usepackage{amsfonts} 
+
+\usepackage{amssymb}
+
+\usepackage{txfonts}
+
+\usepackage{hyperref}
+
+\usepackage{hyphsubst}
+
+\usepackage{microtype}
+
+\hypersetup{hidelinks}
+
+%\usepackage{geometry}
+%\usepackage{setspace}
+%\geometry{a4paper,left=60pt,right=60pt,top=60pt, bottom=60pt}
+%\spacing{1.2}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{sats}[theorem]{Sats}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{exempel}[theorem]{Exempel}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{korollarium}[theorem]{Korollarium}
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+% \theoremstyle{definition}
+% \newtheorem{proof}[theorem]{Proof}
+\theoremstyle{definition}
+\newtheorem{bevis}[theorem]{Bevis}
+\theoremstyle{definition}
+\newtheorem{problem}[theorem]{Problem}
+
+\title{Intro to Gaussian Primes}
+\author{William Kraft}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+%\tableofcontents
+
+\input{text.tex}
+
+%\printbibliography[heading=bibintoc,title=References,]
+\end{document}

@@ -1,0 +1,109 @@
+\documentclass[a4paper]{article}
+%\usepackage[utf8]{inputenc}
+\usepackage[english, swedish]{babel}
+\usepackage[T1]{fontenc}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2ex}
+
+%\usepackage[backend=biber, style=apa]{biblatex}
+%\usepackage{csquotes}
+%\addbibresource{sources.bib}
+
+\usepackage{mathtools}
+
+\usepackage{graphicx}
+
+\usepackage{amsthm} 
+
+\usepackage{amsfonts} 
+
+\usepackage{amssymb}
+
+\usepackage{txfonts}
+
+\usepackage{microtype}
+
+\usepackage{setspace}
+
+\usepackage{hyperref}
+
+\usepackage{hyphsubst}
+
+\usepackage{float}
+
+\usepackage{enumitem}
+
+\usepackage{fancyhdr}
+
+\hypersetup{hidelinks}
+
+\usepackage{geometry}
+\usepackage{setspace}
+\geometry{a4paper,left=60pt,right=60pt,top=60pt, bottom=60pt}
+\spacing{1.2}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{sats}[theorem]{Sats}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{exempel}[theorem]{Exempel}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{korollarium}[theorem]{Korollarium}
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+% \theoremstyle{definition}
+% \newtheorem{proof}[theorem]{Proof}
+\theoremstyle{definition}
+\newtheorem{bevis}[theorem]{Bevis}
+\theoremstyle{definition}
+\newtheorem{metod}[theorem]{Metod}
+\theoremstyle{definition}
+\newtheorem{method}[theorem]{Method}
+\theoremstyle{definition}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{plain}
+\newtheorem{obs}[theorem]{OBS!}
+
+\newcommand{\opim}{\operatorname{im}}
+\newcommand{\opker}{\operatorname{ker}}
+\newcommand{\opspan}{\operatorname{span}}
+\newcommand{\opmean}[1]{\overline{#1}}
+\newcommand{\opconj}[1]{\overline{#1}}
+ 
+
+
+\title{Burnsides Lemma}
+\author{William Kraft}
+\date{\today}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{William Kraft}
+\fancyhead[C]{Burnsides Lemma}
+
+% \maketitle
+% \tableofcontents
+% \newpage
+
+\input{text.tex}
+
+%\printbibliography[heading=bibintoc,title=References,]
+\end{document}

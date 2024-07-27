@@ -1,0 +1,383 @@
+\section{Funktioner}
+
+\begin{definition}[Funktion]
+	En funktion är en kartläggning som för varje element i definitionsmängden, ger ett unikt värde i målmängden.
+
+	\center
+	\begin{tikzpicture}
+		\begin{scope}[local bounding box=A, x=3cm, y=1cm]
+			\node[minimum width=2em] (n-1-A) at (0,-0) {3};
+			\node[minimum width=2em] (n-2-A) at (0,-1) {8};
+			\node[minimum width=2em] (n-3-A) at (0,-2) {-6};
+		\end{scope}
+		\node[ellipse, draw, fit=(A), label={above:Definitionsmängd}] {};
+
+		\begin{scope}[local bounding box=B, x=3cm, y=1cm]
+			\node[minimum width=2em] (n-1-B) at (1,-0) {0.3};
+			\node[minimum width=2em] (n-2-B) at (1,-1) {1.2};
+			\node[minimum width=2em] (n-3-B) at (1,-2) {\(\pi\)};
+		\end{scope}
+		\node[ellipse, draw, fit=(B), label={above:Målmängd}] {};
+
+		\draw[->] (n-1-A) -- (n-2-B);
+		\draw[->] (n-2-A) -- (n-2-B);
+		\draw[->] (n-3-A) -- (n-1-B);
+	\end{tikzpicture}
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+\begin{definition}[Funktion]
+	En funktion är en kartläggning som för varje element i definitionsmängden, ger ett unikt värde i målmängden.
+\end{definition}
+
+\begin{exempel} \label{exempel:funktioner}
+	Det finns många sorters funktioner, både i och utanför matematiken:
+	\begin{itemize}
+		\item \(f(x) = x^2\)
+		\item \(g(n) = \begin{cases} 0, \text{ n udda}  \\ 1, \text{ n jämn} \end{cases}\)
+		\item \(u(x, t) = \text{``Värmen i staven \(x\) cm från kanten vid tiden \(t\)''} \) 
+		\item \(P(t, p) = \text{``Sannolikheten att tävlande \(t\) i en mattetävling löser problem \(p\) .''} \) 
+		\item Funktionen som tar in en funktion, och ger dess invers.
+	\end{itemize}
+	Inte alla funktioner behöver vara möjliga att skriva med matematisk notation, eller ens vara lätta att beräkna. Men, de måste ge ett och samma svar om de får samma invärden.
+\end{exempel}
+
+
+
+\subsection{Viktiga Mängder} % Tror mycket här kan tas bort!
+
+\begin{definition}[Definitionsmängd]
+	Definitionsmängden till en funktion är mängden (samlingen) av alla tillåtna invärden.
+\end{definition}
+
+\begin{obs}
+	Två olika funktioner kan ha samma regel, men olika definitionsmängder.
+\end{obs}
+
+\begin{definition}[Målmängd]
+	Målmängden till en funktion är mängden (samlingen) av alla möjliga utvärden.
+\end{definition}
+
+\begin{definition}[Värdemängd]
+	Värdemängden till en funktion är mängden (samling) av alla värden funktionen faktiskt antar.
+\end{definition}
+
+\begin{obs}
+	Målmängden kan väljas till det som är smidigast, medan värdemängden är unikt bestämd.
+\end{obs}
+
+
+\begin{exempel}
+	Funktionen \(f(x) = \sqrt{x-2}\) har oftast:
+	\begin{itemize}
+		\item Definitionsmängden: \([2, \infty)\) - ``Reella tal större än eller lika med 2''
+		\item Målmängden: \(\mathbb{R}\) - ``Reella talen''
+		\item Värdemängden: \([0, \infty ]\) - ``Icke-negativa reella talen''
+	\end{itemize}
+	men \(g(x) = \sqrt{x-2}\) kan istället ha:
+	\begin{itemize}
+		\item Definitionsmängden: Heltalen större än eller lika med 3
+		\item Målmängden: \(\mathbb{R}\) - ``Positiva Reella talen''
+		\item Värdemängden: \([0, \infty ]\) - ``Heltalen större än 0''
+	\end{itemize}
+	
+\end{exempel}
+
+\subsection{Viktiga egenskaper}
+
+\begin{definition}[Injektiv]
+	En funktion är injektiv om inga två element i definitionsmängden har samma värde i målmängden.
+\end{definition}
+
+\begin{obs}
+	Injektiv innebär att om \(f(x) = f(y)\) så måste \(x = y\)
+\end{obs}
+
+
+\begin{definition}[Surjektiv]
+	En funktion är surjektiv, om målmängden är samma som värdemängden.	
+\end{definition}
+
+\begin{obs}
+	Surjektiv innebär att för varje \(y\), finns ett (eller flera) \(x\) så att \(f(x) = y\).
+\end{obs}
+
+\begin{definition}[Inverterbar]
+	En funktion är inverterbar om den är både injektiv och surjektiv.
+\end{definition}
+
+\begin{definition}[Kontinuerlig (enklare definition)]
+	En funktion är kontinuerlig om du kan gå längs grafen över hela definitionsmängden.	
+\end{definition}
+
+\begin{obs}
+	Exakta definitionen är mer komplicerad, men det här är intuitionen.
+\end{obs}
+
+\begin{exempel} ~
+	\center
+	\begin{tikzpicture}
+		\foreach[count=\i] \lseti/\lsetmi in {{A}/{1,3,5,-3},{B}/{5,12,8}} {
+			\begin{scope}[local bounding box=\lseti, x=3cm, y=0.7cm]
+				\foreach[count=\j] \lj in \lsetmi {
+					\node[minimum width=2em] (n-\j-\lseti) at (\i,-\j) {\lj};
+				}
+			\end{scope}
+			\node[ellipse, draw, fit=(\lseti), label={above:$\lseti$}] {};
+		}
+		\draw[->] (n-1-A) -- (n-2-B);
+		\draw[->] (n-2-A) -- (n-1-B);
+		\draw[->] (n-3-A) -- (n-3-B);
+		\draw[->] (n-4-A) -- (n-1-B);
+	\node at (current bounding box.north) [] {Surjektiv};
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		\foreach[count=\i] \lseti/\lsetmi in {{A}/{1,3,5},{B}/{5,12,8, 31}} {
+			\begin{scope}[local bounding box=\lseti, x=3cm, y=0.7cm]
+				\foreach[count=\j] \lj in \lsetmi {
+					\node[minimum width=2em] (n-\j-\lseti) at (\i,-\j) {\lj};
+				}
+			\end{scope}
+			\node[ellipse, draw, fit=(\lseti), label={above:$\lseti$}] {};
+		}
+		\draw[->] (n-1-A) -- (n-2-B);
+		\draw[->] (n-2-A) -- (n-4-B);
+		\draw[->] (n-3-A) -- (n-3-B);
+	\node at (current bounding box.north) [] {Injektiv};
+	\end{tikzpicture}
+	\hfill
+	\begin{tikzpicture}
+		\foreach[count=\i] \lseti/\lsetmi in {{A}/{1,3,5},{B}/{5,12,8}} {
+			\begin{scope}[local bounding box=\lseti, x=3cm, y=1cm]
+				\foreach[count=\j] \lj in \lsetmi {
+					\node[minimum width=2em] (n-\j-\lseti) at (\i,-\j) {\lj};
+				}
+			\end{scope}
+			\node[ellipse, draw, fit=(\lseti), label={above:$\lseti$}] {};
+		}
+		\draw[->] (n-1-A) -- (n-2-B);
+		\draw[->] (n-2-A) -- (n-1-B);
+		\draw[->] (n-3-A) -- (n-3-B);
+	\node at (current bounding box.north) [] {Inverterbar};
+	\end{tikzpicture}
+\end{exempel}
+\subsection{Problem}
+
+\begin{problem}
+	Vad är definitionsmängden, målmängden, och värdemängden till funktionerna i exempel \ref{exempel:funktioner}?
+\end{problem}
+
+\begin{problem}
+	Varför är en funktion inverterbar om den är både surjektiv och injektiv? Varför räcker det inte med en?
+\end{problem}
+
+
+% \begin{problem}
+% 	Vilka av följande definierar funktioner?
+% 	\begin{enumerate}
+% 		\item \(f(x) = 1\) 
+% 		\item \(f(x)^2 = x^2\) 
+% 		\item \(f\) har dubbla värdet till dess invärde.
+% 		\item \(f\) tar inte in veckodagen, och ger dagens väder.
+% 	\end{enumerate}
+% \end{problem}
+
+\begin{problem}
+	Låt
+	\[
+		f(x) = \sqrt{x + 1}.
+	\]
+	Vilka av följande kan vara \(g\):s definitionsmängd? Målmängd? Värdemängd?
+	\begin{enumerate}
+		\item Reella talen större än \(-1\) 
+		\item Icke-negativa reella talen
+		\item Reella talen
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	Låt \(f(x) = x^2\) vara en injektiv funktion med värdemängd alla positiva reella tal. Beskriv alla möjliga definitionsmängder! (Definitionsmängden behöver inte vara sammanhängande)
+\end{problem}
+
+
+% \begin{problem}
+% 	Är \(f(x) = x^2\) injektiv eller surjektiv? Vad händer om vi låter definitionsmängden eller målmängden vara de positiva talen?
+% \end{problem}
+
+\begin{problem}
+	Varför är \(f(x)\) definierad men inte \(g(x)\) om TODO! HMMMMMMM
+	\begin{itemize}
+		\item \(h(x) = x^2\),
+		\item \(k(x) = x^3\) 
+		\item \(f(x) = \sqrt{h(x)}\)  
+		\item \(g(x) = \sqrt{k(x)}\)  
+	\end{itemize}
+\end{problem}
+
+\begin{problem}
+	Är en injektiv funktion av en injektiv funktion injektiv? Är en surjektiv funktion av en surjektiv funktion surjektiv?
+\end{problem}
+
+\begin{problem}
+	Låt \(f(x)\) vara injektiv men inte surjektiv, och \(g(x)\) vara surjektiv men inte injektiv. Kan \(h(x) = g(f(x))\) vara inverterbar? Ge ett exempel eller motbevisa.
+\end{problem}
+
+\begin{problem}
+	Hitta inversen till:
+	\begin{itemize}
+		\item \(f(x) = x^3\) 
+		\item \(f(x) = 3x - 1\) 
+		\item \(f(x) =\)  % TODO Skapa en svår!
+	\end{itemize}
+\end{problem}
+
+\begin{problem}
+	Hur ser grafen till en kontinuerlig injektiv funktion ut? Vad utmärker dem? Prata med en kamrat! Vad händer om den dessutom är surjektiv?
+\end{problem}
+
+
+\begin{problem}
+	Visa att \(f(x) = \sum_{k=0} ^{101} (-x)^k\) är surjektiv! (Tips! använd att den är kontinuerlig)
+\end{problem}
+
+\begin{problem}
+	Visa att \(f(x) = \sum_{k=0} ^{100} (-x)^k\) inte är surjektiv! (Tips! använd att den är kontinuerlig)
+\end{problem}
+
+\begin{problem}
+	Visa att funktionen
+	\[
+		f(x) = x^{101} + \frac{1}{x} + \ln(x+3) + e^{x^2 + 2}
+	\]
+	definierad på de positiva reella talen, är inverterbar. (Tips! Rita den!)
+\end{problem}
+
+\begin{problem}
+	Om \(f(x)\) är surjektiv, visa att \(f(x)\) är injektiv om
+	\[
+		g(x) = f(f(x))
+	\]
+	är injektiv.
+\end{problem}
+
+\begin{problem}
+	Om \(f(x)\) är injektiv, visa att \(f(x)\) är surjektiv om
+	\[
+		g(x) = f(f(x))
+	\]
+	är surjektiv.
+\end{problem}
+
+
+
+
+
+
+TODO!
+        - Finns det ett värde som får denna? (För olika funktioner)
+        - Surjektiv, injektiv, på diskret mapping?
+        - Varför är första ok, men inte den andra?
+            - Funktioner som går in i varandra så att värdemängd ej matchar 
+            - Funktioner som går in i varandra så att värdemängd matchar 
+        - Surjektiv på surjektiv, är den surjektiv? Injektiv?
+        - Injektiv på injektiv, är den surjektiv? Injektiv?
+        - Injektiv, surjektiv på begränsade intervall?
+        - Bestäm värdemängd av klurigt tudelat problem
+        - Bestäm invers
+        - Visa att det finns en invers
+
+
+
+
+
+
+\section{Funktionalekvationer}
+Ibland får man inte givet vad en funktion är, utom måste lista ut det! Det sker ofta i formen av funktionalekvationer.
+
+\begin{exempel}
+	Ett exempel på en funktionalekvation är att
+	\[
+		(x,y): f(x) + f(y) = x + y
+	\]
+	\textbf{för alla} värden på \(x, y\). Vi försöker alltså inte hitta värden på \(x, y\) som i en vanlig ekvation, utom vet att det gäller för alla, och vill hitta funktionen! 
+	I den här funktionalekvationen, kan vi sätta in \(x=y\) (eftersom vi får välja fritt bland \(x, y\)), och får
+	\[
+		(x, -x) : f(x) + f(x) = x + x \Rightarrow f(x) = x.
+	\]
+\end{exempel}
+
+\subsection{Metoder}
+\begin{metod}[Substitution]
+	Sätt in värden på parametrarna som ger bättre samband.
+\end{metod}
+
+\begin{metod}[Symmetri]
+	Sätt in värden på parametrarna som gör om ena delen av ekvationen till den andra.
+\end{metod}
+
+\begin{metod}[Bestäm \(f(0)\)]
+	Bestäm (om möjligt) värdet på \(f(0)\), och använd det för att se hur funktionen ändras därifrån.
+\end{metod}
+
+\begin{metod}
+	Utnyttja injektivitet! Injektivitet gör att du kan ``skala bort'' funktionen, alltså att \(f(x) = f(x)\) ger \(x = y\).
+\end{metod}
+
+\begin{metod}
+	Uttnyttja surjektivitet! Surjektivitet gör att du kan substituera in funktionen, ty du vet att det finns ett invärde \(\alpha \), så att \(f(\alpha ) = x\).
+\end{metod}
+
+\subsection{Problem}
+\begin{problem}
+	Bestäm \(f(x) : \mathbb{R} \rightarrow \mathbb{R} \) om
+	\[
+		2f(x) - f(-x) = x
+	\]
+\end{problem}
+
+\begin{problem}
+	Låt 
+	\[
+		f(x^2+ f(y)) = y + f(x^2).
+	\]
+	Visa att \(f(x)\) är:
+	\begin{itemize}
+		\item Surjektiv
+		\item Injektiv
+	\end{itemize}
+\end{problem}
+
+\begin{problem}
+	
+\end{problem}
+
+
+
+
+
+\if 0
+	- Problem
+			- Lös
+					-    f(x) + f(y) = x + y
+					-    2f(x) - f(-x) = x
+
+			- Visa att f, f(x^2+ f(y)) = y + f(x^2):
+					- Är surjektiv
+					- Är injektiv
+
+			- Funktionen f är injektiv, bestäm den om
+					- f(f(f(x))) = f(f()) ...
+\fi
+
+
+
+

@@ -1,0 +1,110 @@
+\section{Mängdlära}
+
+\begin{definition}[Mängd]
+En mängd är en samling element där ordning och antal inte spelar någon roll. Dessa element kan vara vad som helst till exempel färgen blå eller talet 2.
+\end{definition}
+
+Man kan definiera en mängd antingen genom att lista upp dess element inom måsvingar, till exempel \(\left\{\text{flygplan, hatt, pannkaka} \right\}\), eller genom en regel för elementen, till exempel mängden av alla färger.
+
+\begin{definition}[Mängdoperationer]
+	En mängdoperator tar en eller flera mängder och skapar en ny. Några av de vanligaste är
+	\begin{center}
+		\begin{tabular}{|ccc|}
+			\hline
+			Operation & Symbol & Innehåller alla element som\\ \hline
+			Union & \(M\cup N\) & Är i M eller N \\ \hline
+			Snitt & \(M \cap  N\) & Är i M och N \\ \hline
+			Komplement & \(M^C\) & Inte är i M \\ \hline
+		\end{tabular}
+	\end{center}
+	Notera! Komplement fungerar bara om det finns en universalmängd som berättar vad alla relevanta element är, den är oftast intuitiv.
+\end{definition}
+
+\begin{problem}
+	Är \(\left\{1, 2, 3\right\}\) samma som \(\left\{3, 1, 1, 2\right\}\)?
+\end{problem}
+
+\begin{problem}
+	Är \(\left\{\text{Elliot} , \text{Tage}, \text{Tom} \right\}\) samma som \(\left\{\text{Elliot}, \left\{\text{Tage}, \left\{\text{Tom} \right\} \right\}\right\}\)?
+\end{problem}
+
+\begin{problem}
+	Skriv upp mängden av alla heltal \(x\) som uppfyller påståendet ``\(x>2\) och \(x <5\)''.
+\end{problem}
+
+
+\begin{problem}
+	Om universalmängden är \(\left\{\text{Mattekollo, UVS och Kodsport} \right\}\), vad blir då:
+	\begin{enumerate}[label=\alph*)]
+		\item \(\left\{\text{Mattekollo, Kodsport} \right\} \cup \left\{\text{Kodsport} \right\}\) 
+		\item \(\left\{\text{UVS, Mattekollo}\right\}^C\) 
+		\item \(\left\{\text{Mattekollo, UVS}\right\} \cap \left\{\text{UVS, Kodsport} \right\} \cap \left\{\text{Kodsport, Mattekollo} \right\}\) 
+	\end{enumerate}
+	
+	OBS! UVS = Ung Vetenskapssport.
+\end{problem}
+
+\begin{problem}
+	Vi har mängden av alla heltal som är delbara med 7. Vad blir dess komplement? (Universalmängden är alla heltal)
+\end{problem}
+
+\begin{problem}
+	Du har mängden av alla tidigare Mattekollodeltagare \(M\)  och mängden av alla Mattekolloledare \(N\) . Hur skapar man mängden av alla som är Mattekolloledare och tidigare varit deltagare?
+\end{problem}
+
+\begin{problem}
+	Vi har mängden vars element uppfyller påståendet ``Elementet är rött'' och den vars element uppfyller påståendet ``Elementet är ett klädesplagg''. Vilket påstående uppfyller deras snitt?
+\end{problem}
+
+\begin{problem}
+	Finns det en koppling mellan mängdoperationerna och påståendet deras element uppfyller? Dessa beror kanske särskilt på konjunktionerna?
+\end{problem}
+
+\begin{problem}
+	Stämmer det att \((A \cup B) \cap (A \cup C) = A \cup (B \cap C)\) för alla mängder \(A, B, C\)? Ställ upp en sanningstabell som för varje element berättar om det är i mängden, givet om det är i \(A, B, C\).
+\end{problem}
+
+\begin{problem}[Extra]
+	Det är 9 dagar på Mattekollo, 7 dagar har lektioner, 2 är måndagar, och en är varken måndag eller har lektioner. Hur många måndagar har lektioner?
+\end{problem}
+
+\begin{problem}[Extra]
+	Hur många element är i \((A \cup B) \cap C\) om \(A =\) mängden av alla tal delbara på 2, \(B = \) mängden av alla tal delbara med 5 och \(C =\) mängden av alla tal från 0 till 20.
+\end{problem}
+
+\begin{problem}[Extra]
+	Ett Venndiagram är ett sätt att illustrera mängder. Man ritar först upp cirklar motsvarande alla mängder, där överlappen representerar element mängderna har gemensamt. Man kan sedan markera de områden en annan mängd består av. Till exempel blir Venndiagrammet för mängden \(A \cup B\) 
+	\def\firstcircle{(0,0) circle (1.5cm)}
+	\def\secondcircle{(60:2cm) circle (1.5cm)}
+	\def\thirdcircle{(0:2cm) circle (1.5cm)}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{scope}
+				\draw \firstcircle node[below] {$A$};
+				\draw \secondcircle node [above] {$B$};
+				\draw \thirdcircle node [below] {$C$};
+				\fill[opacity=0.5, kollofargen] \firstcircle \secondcircle;
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+
+	\noindent
+	\begin{enumerate}[label=\alph*)]
+		\item Rita ett Venndiagram för \((A \cap B) \cup C \)
+		\item Bevisa fråga 9 med Venndiagram
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[Extra Extra]
+	När man hade lagt upp en omgång med kortspelet Set fanns det 12 kort totalt. 7 var röda, 6 var randiga och 6 hade romber. Vidare vet du att 4 var röda och randiga, 3 hade randiga romber och 2 hade röda romber. Till sist fanns det ett kort med en röd randig romb.
+	\begin{enumerate}[label=\alph*)]
+		\item Hur många kort var röda och randiga men saknade romber?
+		\item Hur många hade romber men var varken röda eller randiga?
+		\item Hur många var varken röda, romber eller randiga?
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[Extra Extra]
+	Kan du se några problem med vår definition av mängder? Kan vi skapa mängder som blir paradoxala (likt påståendet ``Denna mening är falsk'')? Kan vi ändra definitionen för att skydda oss från detta, kanske med hjälp av en universalmängd?
+\end{problem}
+

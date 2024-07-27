@@ -1,0 +1,97 @@
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\input{structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+\pagestyle{empty}
+\setcounter{chapter}{3}
+
+\begin{document}
+  \renewcommand*\rmdefault{ppl}\normalfont\upshape
+
+\chapter{Gruppteori 4. Lagranges sats}
+\kapiteldatum{23 juli}
+\large
+\thispagestyle{empty} 
+
+\begin{definition} Låt \(H = \left\{h_1, h_2, \dots, h_n\right\}\) vara en delgrupp av \(G\). För varje element \(a\) i \(G\) definierar vi \textit{sidoklassen} \(a \star H = \left\{a  \star h_1, a \star h_2, \dots, a \star h_n\right\}\).
+\end{definition}
+
+\begin{problem}
+  Låt \(M\) vara en delgrupp till \(G\) med \(k\) element. Hur många element har \(a  \star M\)?
+\end{problem}
+
+\begin{problem} 
+	Finns det något element som inte är i någon sidoklass?
+\end{problem}
+
+\begin{problem}
+	Visa att om två sidoklasser till samma delgrupp båda innehåller ett visst element så sammanfaller de.
+\end{problem}
+
+\begin{theoremeT} \textbf{(Lagranges sats)} Storleken av en delgrupp delar storleken av gruppen.
+\end{theoremeT} % Förtydliga
+
+\begin{problem}
+  Bevisa Lagranges sats.
+\end{problem}
+
+\begin{problem}
+  Hitta de två delgrupperna till \(\mathbb{Z} _{29}\).
+\end{problem}
+
+\begin{problem}
+  Visa att alla grupper av primtals storlek är cykliska.
+\end{problem}
+
+\begin{problem}
+  Visa att om storleken av två delgrupper är relativt prima så är deras snitt \(\left\{e\right\}\).
+\end{problem}
+
+\begin{definition} \textbf{(Ordning).} 
+  \textit{Ordningen} av ett element \(a\) är det minsta heltal \(n\) så att \(a ^ n = e\). 
+\end{definition}
+
+\begin{problem}
+  Vad är ordningen av vardera element i ``klä om strumpan''-gruppen?
+\end{problem}
+
+\begin{problem}
+  Vilket element i permutationsgruppen \(S_5\) har högst ordning?
+\end{problem}
+
+\begin{problem}
+  Låt \(a\) vara ett element i gruppen av heltal modulo \(n\) under addition. Vilka möjliga ordningar kan \(a\) ha?
+\end{problem}
+
+\begin{problem}
+  Visa att för ett element \(a\) så implicerar \(a^n = e\) att ordningen av \(a\) delar talet \(k\).
+\end{problem}
+
+
+\begin{problem}
+ Visa att för ett element \(a\) i en grupp \(G\) med \(n\) stycken element så måste \(a ^{n} = e\).
+\end{problem}
+
+\begin{theoremeT} \textbf{(Eulers sats).} 
+  För två positiva och relativt prima heltal \(a, n\) gäller att \(a ^{\varphi (n)} \equiv 1 \mod n\) där \(\varphi (n)\) är antalet tal mindre än eller lika med \(n\) som är relativt prima till \(n\).
+
+\end{theoremeT}
+
+\begin{problem}
+  Visa att heltalen med en multiplikativ invers modulo \(n\) är exakt de element som är relativt prima med \(n\).
+\end{problem}
+
+
+\begin{problem}
+  Bevisa Eulers sats.
+\end{problem}
+
+\subsection*{Extrauppgifter}
+Jobba på uppgifterna från tidigare blad. Det finns även ett blad om gruppverkan och Burnsides lemma om man önskar.
+
+
+\end{document}

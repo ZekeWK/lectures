@@ -1,0 +1,155 @@
+%Se till att göra svåra problem
+% Lägg till mer om slutledningar!!!
+
+\begin{definition}[Påstående]
+	Ett påstående i logiken är något som antingen är sant eller falskt.
+\end{definition}
+
+
+\begin{definition}[Negation]
+	Negationen till ett påstående är falskt när det ursprungliga påståendet är sant och vice versa. Negationen blir alltså ett eget påstående.
+\end{definition}
+
+\begin{definition}[Språklig konjunktion]
+	En språklig konjunktion sätter ihop två påståenden och skapar ett nytt. Några vanliga är:
+	\begin{itemize}
+		\item ``och'' - Som är sann om alla påståendena är sanna
+		\item ``eller'' - Som är sann om något av påståendena är sanna
+		\item ``antingen eller'' - Som är sann om exakt ett av påståendena är sanna
+	\end{itemize}
+\end{definition}
+
+\begin{problem}
+	Är dessa påståenden?
+	\begin{enumerate}[label=\alph*)]
+		\item Cirklar har inga hörn och kvadrater har 3 hörn
+		\item 1, 2, 3, 4 och några andra tal
+		\item Antingen är Python ett programmeringsspråk eller så är Java det
+	\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+	Är dessa påståenden sanna eller falska?
+	\begin{enumerate}[label=\alph*)]
+		\item Man ska vara på sitt rum från 22:00 och frukost serveras 07:00
+		\item Mattekollo är inte i september eller oktober
+		\item Påståenden är antingen sanna eller falska
+	\end{enumerate}
+\end{problem} 
+
+
+\begin{problem}
+	Skriv ner ett påståenden som du inte vet om det är sant eller falskt.
+\end{problem}
+
+\begin{problem}
+	Vad är negationen till ``Fredrik älskar alla robotar''?
+\end{problem}
+
+\begin{problem}
+	Kan man använda färre ``inte''? Påståenden är samma om de alltid är sanna samtidigt.
+	\begin{enumerate}[label=\alph*)]
+		\item Det finns inga brädspel som Valentina inte älskar
+		\item Inte alla jämna tal delas inte av tre
+		\item \(x \neq 2\) och \(x \geq 2\) 
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	Kan man förenkla dessa påståenden?
+	\begin{enumerate}[label=\alph*)]
+		\item \(x\) är större än 2 eller mindre än -2 och definitivt större än 3
+		\item Mattekollo hålls antingen i Linköping eller någon annanstans i Sverige
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	Är negationen till ``Idag är tisdag och klockan är efter 8:00'' att ``Idag är inte tisdag och klockan är inte efter 8:00''?
+\end{problem}
+
+\begin{problem}
+	Vad är påståendet som bestämmer om du tror att du kommer gilla ett brädspel? Lägg till minst en av varje konjunktion!
+\end{problem}
+
+\begin{problem}[Extra]
+	Det finns två till vanliga konjunktioner, ``om'' och ``om och endast om''. När borde dessa konjunktioner vara sanna? Vad låter rimligt? Är dessa påståenden sanna?
+	\begin{enumerate}[label=\alph*)]
+		\item Om ett tal är delbart på 6 är det delbart med 2 och 3
+		\item Om det är jullov är det inte Mattekollo
+		\item Om och endast om det regnar ska man använda paraply
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[Extra]
+	Är ``Denna mening är falsk'' ett påstående?
+\end{problem}
+
+\begin{problem}[Extra]
+	Om vi har två påståenden, vilka är alla kombinationer av sant och falskt? När är konjunktionen ``och'' sann?
+\end{problem}
+
+\begin{problem}[Extra]
+	För att göra logik lättare att skriva kan man använda symboler istället. Då brukar man skriva påståenden som en bokstav, till exempel kan man låta A vara påståendet ``Det är söndag''. Sedan kan man ersätta ``inte'' med \(\lnot\), ``och'' med \(\land\) och ``eller'' med \(\lor\). Pröva att skriva några påståenden med dessa symboler.
+\end{problem}
+
+
+
+
+
+
+
+% \begin{definition}[Slutledningar]
+% 	Två andra viktiga operatorer är
+% 	\begin{itemize}
+% 		\item ``implicerar'' - Som är falsk bara om vänstra värdet är sant och högra värder är falskt
+% 		\item ``ekvivalent'' - Som är sann om värdena är samma
+% 	\end{itemize}
+% 	Med sanna implikationer och ekvivalenser kan man härleda fler påståenden som är sanna. Man behöver inte alltid veta om det vänstra är sannt för att avgöra om själva implikationen är det.
+% \end{definition}
+
+
+
+% \begin{definition}[Notation]
+% 	För att göra det lättare att skriva ner har matematiker bestämt viss symboler som betyder samma som orden:
+% 	\begin{center}
+% 		\begin{tabular}{ c c c }
+% 		 ``inte'' : \(\lnot\)  & ``och'' : \(\land\)  & ``eller'' : \(\lor\)  \\ 
+% 		 ``antingen eller'' : \(\underline{\lor}\)  & ``implicerar'' : \(\Rightarrow\)  & ``ekvivalent'' : \(\Leftrightarrow \)  \\  
+% 		\end{tabular}
+% 	\end{center}
+% 	Dessutom används ofta 1 och 0 för sant och falskt, och ibland kan \( \cdot \) och \(+\) användas för ``och'' respektive ``eller''
+% \end{definition}
+% 
+% \begin{problem}
+% 	Skriv om med notation:
+% 	\begin{itemize}
+% 		\item \(A\) och (\(B\) eller \(C\))
+% 		\item \(A\) implicerar (antingen \(B\) eller \(C\))
+% 	\end{itemize}
+% \end{problem}
+% 
+% \begin{problem}
+% 	Skriv några egna meningar med notationen. För själva påståendena brukar man sätta in citattecken.
+% \end{problem}
+% 
+% \begin{problem}[Extra]
+% 	Kan du skapa en tabell över när ett påstående är sant? Gör det för påstående ``Om A är sant och (B eller C) är sant'' där A, B och C är påstående vars sanningsvärde du vet.
+% \end{problem}
+% 
+% \begin{problem}
+% 	Om och endast om \(x\) är udda och \(y\) är udda är \(x  \cdot y\) udda. Kan detta påstående formuleras med notation?
+% \end{problem}
+% 
+% \begin{problem}
+% 	Översätt följande påstående till text: ``William gillar logik'' \(\land\) ``Ergo är logik'' \(\Rightarrow \) ``William giller Ergo''
+% \end{problem}
+
+
+
+% Lägg till lite svårare uppgifter
+
+% Lägg till kontrapositiven
+% Lägg till mer extra uppgifter
+% Lägg till uppgfit som bygger till ett problem
+% Lägg till paradoxala påståenden

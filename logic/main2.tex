@@ -1,0 +1,58 @@
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\input{structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+\pagestyle{empty}
+\setcounter{chapter}{1}
+
+\usepackage{circuitikz}
+
+\begin{document}
+  \renewcommand*\rmdefault{ppl}\normalfont\upshape
+
+\chapter{Logik 2}
+\kapiteldatum{18 juli}
+\large
+\thispagestyle{empty}
+
+\input{lec2.tex}
+
+
+
+\end{document}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\chapter*{Bibliography}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}} % Add a Bibliography heading to the table of contents
+
+%------------------------------------------------
+
+%\section*{Articles}
+%\addcontentsline{toc}{section}{Articles}
+%\printbibliography[heading=bibempty,type=article]
+
+%------------------------------------------------
+
+%\section*{Books}
+%\addcontentsline{toc}{section}{Books}
+%\printbibliography[heading=bibempty,type=book]
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage % Make sure the index starts on an odd (right side) page
+\phantomsection
+\setlength{\columnsep}{0.75cm} % Space between the 2 columns of the index
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}} % Add an Index heading to the table of contents
+\printindex % Output the index
+
+%----------------------------------------------------------------------------------------
+

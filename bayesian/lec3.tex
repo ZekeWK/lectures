@@ -1,0 +1,122 @@
+By now, we know the distribution of the parameter, and may calculate anything we want to know about the parameter or the distribution!
+
+\subsection{Posterior predictive distribution}
+\begin{definition}[Posterior predictive distribution]
+	Let \(Y\) be a random variable which is identically distributed to \(X\). Given the prior distribution, data distribution and outcomes of \(X\), we may then calculate the simultaneous distribution of \(Y\) and \(\Theta \), and marginalise it to get the distribution of \(Y\). The latter is called the posterior predictive distribution and is (in the continuous case) calculated as
+	\[
+		f _{Y|X}(x|\theta ) = \int_{-\infty }^{\infty} f _{\Theta |X}(\theta|x )  \cdot f _{Y|\Theta }(y|\theta ) d \theta.
+	\]
+\end{definition}
+
+\begin{obs}
+	The posterior predictive distribution is very similar to the prior predictive distribution, but instead of using the prior distribution, it uses the posterior distribution.
+\end{obs}
+
+\subsection{Credible interval}
+
+
+\begin{definition}[Credible interval]
+	A \(1-\alpha \)  credible interval of \(\Theta\) is an interval \(I\) such that \(P(\Theta  \in I| X) = 1-\alpha \). 
+\end{definition}
+
+\begin{example}[Continuous Case]
+	A \(1- \alpha \) credible set \(A\) would have
+	\[
+		\int_{A} f _{\Theta |X}(\theta |x) d \theta  = 1-\alpha 
+	\]
+\end{example}
+
+
+\begin{obs}
+	We often choose a symmetric credible interval, where \(X\) is equally likely to be lower or higher than the interval, but may choose it as we please as long as the probability of \(X\) falling within it is \(p\).
+\end{obs}
+
+\begin{obs}
+	Quite often numerical approximation of integrals is used to find credible intervals.
+\end{obs}
+
+\subsection{Decisions}
+\begin{definition}[Expected Value]
+	The expected value of function \(g\) of a continuous random variable \(X\) is 
+	\[
+		E\left[g(X)\right] = \int_{-\infty }^{\infty} g(x) f _{X}(x) dx.
+	\]
+\end{definition}
+
+\begin{obs}
+	The expected value is linear.
+\end{obs}
+
+
+\begin{definition}[Loss Function]
+	The loss function
+	\[
+		L\left[\theta , a\right]
+	\]
+	where is a possible outcome of \(\Theta \), and \(a\) is an action, is the ``loss'' which occurs if we take the action \(a\) when \(\Theta \) has the outcome \(\theta \).
+\end{definition}
+
+\begin{definition}[Bayes Risk]
+	The Bayes risk,
+	\[
+		E\left[L(\Theta, W(X))\right],
+	\]
+	is the expected loss when using the decisions rule \(W(x)\) to decide your action given observation
+\end{definition}
+
+\begin{theorem}[Minimising Bayes Risk]
+	In order to minimise the Bayes risk however, notice that the outcome \(x\) of \(X\) is already determined, and thus we simply minimize
+	\[
+		E\left[L(\Theta, W(x))| X\right] = \int_{- \infty }^{\infty} L(\theta , W(x))  \cdot f _{\Theta | X}(\theta |x) d \theta.
+	\]
+\end{theorem}
+
+\begin{example}
+	Let the action to be taken be, giving an estimate \(a\) of \(\theta\), and the loss function be \((\theta -a)^2\). We wish to minimize
+	\[
+		E[L(\Theta, a)|X] = E [ (\Theta - a)^2 |X] = E[\Theta ^2|X] -2aE[\Theta |X] + a^2.
+	\]
+	As we can only affect \(a\), we wish to minimize
+	\[
+		a^2-2aE[\Theta |X]
+	\]
+	which is done by setting \(a = E[\Theta |X]\).
+\end{example}
+
+\subsection{Bayesian Hierarchy}
+
+\begin{definition}
+	If \(X|\Theta \), \(\Theta | \Phi \) and \(\Phi \) have known distributions, we call this a Bayesian Hierarchy, where \(\Phi \) is a super parameter.
+\end{definition}
+
+\begin{example}
+	Let \(X\) be the result of a chess player during a single match, \(\Theta \) be their ability depending on that day, and \(\Phi \) be their skill. Then by seeing results from matches, we can update our belief of their ability that day, and in turn, update our belief of their skill.
+\end{example}
+
+\subsection{Easier calculations}
+While Bayesian inference gives a good framework for statistics, it also requires a lot of integrals. All the given examples have been nice in this regard, but one easily encounters situation where the integrals are unfeasible, or even unsolvable. In these cases we may leave them, and when calculating the final values simply approximate them. There are however some methods to make our lives easier.
+
+
+
+
+
+
+\begin{definition}[Conjugating distributions]
+	We call a prior distribution and a data distribution conjugating, if the posterior distribution is in the same family (of the same form) as the prior distribution.
+\end{definition}
+
+\begin{obs}
+	These are often the nicest cases, and if within reason, we prefer to choose these types of distributions.
+\end{obs}
+
+
+\subsection{Exercise Problems}
+\begin{problem}
+	What would be the posterior distribution of \(\Phi \) in the example about a Bayesian Hierarchy?
+\end{problem}
+
+
+\begin{problem}
+	Let \(X| \alpha , \beta \), what would be a conjugating distribution of \(\alpha, \beta \)? 
+\end{problem}
+

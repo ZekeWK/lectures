@@ -1,0 +1,314 @@
+\subsection{Motivation}
+The world is full of systems where no model we can construct, either due to complexity or lack of data, could produce accurate results. Probability theory instead attempts to find patterns within the chaos, making us able to still study these random, stochastic, systems.
+
+
+\subsection{Conditional Probability}
+
+
+\begin{definition}[Conditional probability]
+	The probability of \(A\) \textbf{given} (an outcome of) \(B\) is defined as
+	\[
+		P(A|B) = \frac{P(A \cap B)}{P(B)}.
+	\]
+\end{definition}
+
+\begin{obs}
+	This definition of conditional probability is quite natural as it preserves relative probability, and gives the new sample space probability 1.
+\end{obs}
+
+\begin{obs}
+	The probability measure \(P( \cdot | B)\) also satisfies Kolmogorov's axioms.
+\end{obs}
+
+\begin{example}
+	The probability of having rolled a 5 on a 6 sided die \textbf{given} that the result was odd, is \(\frac{1}{3}\).
+\end{example}
+
+\begin{theorem}[Total Probability Theorem]
+	Let \(B_1, \dots, B_n\) be mutually exclusive events and their union be the sample space. If \(A\) is an event, then
+	\[
+		P(A) = P(\cup _{k=1} ^{n} A \cap B_k) = \sum_{k=1}^{n} P(A \cap B _k) =  \sum_{k=1}^{n} P(A|B_k)  \cdot P(B_k)
+	\]
+\end{theorem}
+
+
+\begin{theorem}[Bayes' Theorem]
+	Let \(A_1, \dots, A_n\) be mutually exclusive events and their union be the sample space. If \(B\) is an event, then
+	\[
+		P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{P(B)} = \frac{P(B|A_i) \cdot P(A_i)}{\sum_{k=1}^{n} P(B|A_k)  \cdot P(A_k)}  
+	\]
+\end{theorem}
+
+\begin{definition}[Independent events]
+	The events \(A\) and \(B\) are independent, \(A \perp B\),  if
+	\[
+		P(A \cap B) = P(A)P(B).
+	\]
+\end{definition}
+
+\begin{obs}
+	This does not imply, for example, that they are independent given C.
+\end{obs}
+
+\subsection{Random variables}
+
+\begin{definition}[Random variables]
+	A random variable (rv) is a function from our sample space to \(\mathbb{R}\) .
+\end{definition}
+
+\begin{example}
+	Consider the experiment of throwing a dart at a dartboard. Let \(X\) be the number of centimeters from the bullseye. Then \(X\) is a random variable. We could have many random variables stemming from the same experiment.
+\end{example}
+
+\begin{example}
+	Let \(X\) be the price of a match (in £), and \(Y\) be the price of a can of gasoline. Then the cost of both is \(X + Y\). If \(Z\) is the number of times you do this purchase, the total cost is \((X+Y) \cdot Z\).
+\end{example}
+
+\begin{obs}
+	We often write the shorthand of \(P(\text{condition} )\) to denote \(P(A)\) where \(A\) is the set of all outcomes satisfying the condition. For example \(P(X = 1)\) where \(X\) is the result of a 6-sided die.
+\end{obs}
+
+\begin{definition}[Outcome of a random variable]
+	An outcome of a random variable is a value obtained by running the experiment. Multiple outcomes of a known random variable are independent.
+\end{definition}
+
+\begin{example}
+	Let \(X\) be the number of leafs on a clover when you pick it up. If i pick up a lucky clover (4 leafs), it means the outcome of picking that clover was \(x = 4\).
+\end{example}
+
+\subsection{Distributions}
+\begin{definition}
+	The distribution function (cumulative distribution function) of a random variable \(X\) is defined as
+	\[
+		F_X(x) = P(X \leq x).
+	\]
+	Note that \(X\) is the random variable, while \(x\) is an argument to the function. 
+\end{definition}
+
+\begin{corollary}
+	A distribution function \(F_X(x)\) of a random variable \(X\) has that
+	\begin{align}
+		&F_X(X) \rightarrow \begin{cases} 0 \\ 1 \end{cases} \text{ when } x \rightarrow \begin{cases} - \infty \\ \infty  \end{cases}  \\
+		&F_X(x) \text{ is a non-decreasing function of } x \\
+		&F_X(x) \text{ is continuous from the right for any} x
+	\end{align}
+\end{corollary}
+
+\begin{theorem}
+	\[
+		P(a < X \leq b) = F_X(b) - F_X(a)
+	\]
+\end{theorem}
+
+
+\begin{definition}[Probability function]
+	For a discrete random variable \(X\) (from a discrete sample space), the probability function is
+	\[
+		f_X(x) = P(X = x)
+	\]
+\end{definition}
+
+\begin{theorem}
+	The sum
+	\[
+		\sum_{x = -\infty }^{\infty} f_X(x) = 1
+	\]
+\end{theorem}
+
+\begin{definition}[Density function]
+	Let \(X\) be a continuous random variable. If the distribution function can be written as
+	\[
+		F_X(x) = \int_{- \infty } ^x f_x(t)dt,
+	\]
+	then \(f_X(x)\) is called the density function (probability density function), and \(X\) is a continuous random variable.
+\end{definition}
+
+\begin{obs}
+	We will often be able to work similarly with continuous and discrete random variables, with the only mayor difference being integration vs summation. As we will focus more on continuous functions in the following lectures, I might exclude the discrete case at times.
+\end{obs}
+
+
+
+\begin{definition}[Distribution]
+	A distribution function corresponds to a unique distribution. Two stochastic variables have the same distribution, if they have the same distribution functions.
+\end{definition}
+
+\begin{obs}
+	This gives us a way to look at the properties of categorising random variables without looking at their corresponding sample spaces.
+\end{obs}
+
+\begin{example}
+	A continuous random variable \(X\) has a uniform distribution on the interval \((a, b)\) (written \(X \sim U(a, b)\)) if
+	\[
+		F_X(x) = \begin{cases} 0, x < a \\ 1, x > b \\ \frac{x-a}{b-a}, \text{ otherwise}   \end{cases} 
+	\]
+\end{example}
+
+\begin{obs}
+	Both the probability function and density function, also uniquely correspond to a distribution function. We may even say it has the distribution of such a function.
+\end{obs}
+
+\begin{example}
+	A discrete random variable \(X \sim \operatorname{Bin} (n, p)\) if
+	\[
+		f _X (x)= \binom{n}{x} p ^{x} (1-p) ^{n-x},
+	\]
+	where \(0 \leq x \leq n \).
+	
+\end{example}
+
+
+
+% TODO!!! Perhaps avoid these?
+
+\begin{theorem} % TODO Double check
+	Let \(X, Y\) be discrete random variables with \(Y= g(X)\) and \(g\) invertible. Then
+	\[
+		f_Y(y) = P(Y = y) = P(g(X) = y) = P(X = g^{-1}(y))=f_X(g^{-1}(y))
+	\]
+	If \(g\) is not invertible, then
+	\[
+		f_Y(y) = P(Y = y) =P(g(X) = y) = \sum_{x \in A} P(X = x)=\sum_{x \in A}f_X(x)
+	\]
+	where \(A = \left\{x | g(x) = y\right\}\).
+
+\end{theorem}
+
+\begin{theorem}
+	Let \(X, Y\) be random variables with \(Y= g(X)\) and \(g\) strictly increasing. Then
+	\[
+		F_Y(y) = P(Y \leq y) = P(g(X) \leq y) = P(X \leq g^{-1}(y)) = F_X(g^{-1}(y))
+	\]
+	If \(g\) strictly decreasing
+	\[
+		F_Y(y) = P(Y \leq y) = P(g(X) \leq y) = P(X \geq g^{-1}(y)) = 1 - F_X(g^{-1}(y)).
+	\]
+\end{theorem}
+
+
+\begin{theorem}
+	Let \(X, Y\) be continuous random variables with \(Y= g(X)\), \(g\) continuous and bijective. Then 
+	\[
+		f_Y(y) = F_Y'(y) = \begin{cases} F_X'(g^{-1}(y)) \cdot g^{-1} ~'(y) \\ -F_X'(g^{-1}(y)) \cdot g^{-1} ~'(y) \end{cases} = f_X(g^{-1}(y)) \cdot g^{-1} ~'(y).
+	\]
+\end{theorem}
+
+\subsection{Multivariate distributions}
+\begin{obs}
+	We may without problem choose two or more random variables from a single experiment.
+\end{obs}
+
+\begin{definition}
+	Given the random variables \(X_1, \dots , X_n\), we can define:
+	\begin{itemize}
+		\item The distribution function
+			\[
+				F_{X_1, \dots , X_n}(x_1, \dots , x_n) = P(X_1 \leq x_1 \land \dots \land X_n \leq x_n).
+			\]
+		\item The probability function (given \(X_i\) discrete)
+			\[
+				f_{X_1, \dots , X_n}(x_1, \dots , x_n) = P(x_1, \dots, x_n).
+			\]
+		\item The density function, \(f\) which satisfies: (given \(X_i\) continuous)
+			\[
+				\underset{\mathbb{R} \times \dots \times \mathbb{R}}{\int \cdots \int} F _{X_1, \dots, X_n}(x_1, \dots ,x_n) (x_1, \dots, x_n) dx_1 \dots dx_n.
+			\]
+	\end{itemize}
+\end{definition}
+
+
+\begin{theorem} % Double check this. Possibly add a special case for 2 variables
+	Let \(\vec{X}, \vec{Y}\) be vectors of random variables with \(\vec{Y} = g(\vec{X})\) and \(g\) bijective, continuous. Then
+	\[
+		f_Y(y) = f_X(g^{-1}(y))  \cdot |\det J| 
+	\]
+	where \(J\) is the Jacobian of \(g^{-1}\). (Proven using variable substitution for integrals)
+\end{theorem}
+
+\begin{definition}[Marginal distribution]
+	Let \(X, Y\) be two random variables with the distribution function \(F _{X, Y}(X,Y)\). Then the marginal distribution of \(X\) is
+	\[
+		F_X(x) = \lim_{y \rightarrow \infty } F_{X, Y}(x, y).
+	\]
+	With a similar spirit, we can define the marginal probability function as
+	\[
+		f_X(x) = \sum_{y = - \infty } ^{\infty } P _{X, Y}(x, y)
+	\]
+	and the marginal density function
+	\[
+		f_X(x) = \int_{-\infty }^{\infty} f _{X, Y}(x,y) dy.
+	\]
+\end{definition}
+
+\begin{example}
+	Let \(X, Y\) be the results of two 6-sided dice. As they are independent, the probability function would be
+	\[
+		f _{X, Y}(x, y) = f _X(x)  \cdot f_Y (x) = \frac{1}{6}  \cdot \frac{1}{6} = \frac{1}{36}
+	\]
+	where \(1 \leq X, Y \leq 6\).
+	The marginal distribution of \(X\) would be
+	\[
+		f _{X}(x) = \sum_{y=1}^{6} f _{X, Y} (x, y) = \frac{1}{6} 
+	\]
+	
+\end{example}
+
+\begin{definition}[Conditional distribution]
+	The probability or distribution function of \(X | Y\) is
+	\[
+		f _{X|Y}(x|y) = \frac{f _{X, Y}(x, Y)}{f _{Y}(y)}
+	\]
+	where \(f _{Y}(y)\) is the marginal density function of \(f _{X, Y}(x, y)\).
+\end{definition}
+
+\begin{obs}
+	Let \(\Delta y> 0\) and \(I = \left[y, y + \Delta Y\right]\) 
+	\begin{align*}
+		P(X<x| Y \in I) &= \frac{P(X<x \land Y \in I)}{P(Y \in I)} \\
+										&= \frac{ \int_{y}^{y + \Delta y}\int_{-\infty }^{x} f _{X, Y}(X, Y)dxdy}{\int_{y }^{y + \Delta y} f  _{Y}(y)dy}.
+	\end{align*}
+	If we let \(\Delta y \rightarrow 0\), using the mean value theorem for integrals we get
+	\begin{align*}
+		P(X<x | Y \in I) &= \frac{\Delta y\int_{-\infty }^{x} f _{X, Y}(X, Y)dx}{\Delta y f_Y(y)} \\
+		&= \frac{\int_{-\infty }^{x} f _{X, Y}(X, Y)dx}{f_Y(y)} \\
+	\end{align*}
+	This would correspond to a distribution function of \(X\) given \(Y = y\). Despite \(Y\) never being exactly \(Y\), the same applies to the numerator, and the limit is defined. By integrating we would intstead get the density funciton of \(X\) given \(Y = y\), as defined in the definition.
+	
+	
+\end{obs}
+
+
+
+\begin{example}
+	Let \(X, Y\) be result of two independent dice, and \(Z = X+Y\). When given the result of \(X\), we have 
+	\[
+		f _{Z| X}(z| x) = f _{Y}(z-x).
+	\]
+\end{example}
+
+
+\subsection{Exercise Problems}
+
+\begin{problem}
+	The probability of having a certain disease is \(0.01\), the probability of getting a positive test result is \(0.9\) if you have the disease, and \(0.01\) if you dont. Given a positive test result, what is the probability of you having the disease?
+\end{problem}
+
+\begin{problem}
+	Let \(X\) be a continuous variable which is uniformly distributed on \((a, b)\). What is the distribution of \(Y = \frac{X}{2} + 3\)?
+\end{problem}
+
+\begin{problem}
+	What is the probability function of the sum of one 6-sided die and one 8-sided die?
+\end{problem}
+
+\begin{problem} % TODO CHECK
+	You want to burn up a few documents in your backyard. The time in minutes, \(T\), it takes for all documents to have been burnt up is distributed as \(T \sim Exp(r)\) where \(R\) is the burn rate of the gasoline you choose. As your time is limited, the chance of you choosing the fast burning new gasoline with burn rate \(10\) is \(30\%\) and otherwise you choose the old with burn rate \(2\). What is the chance of you having burnt everything within 5 minutes?
+\end{problem}
+
+\begin{problem}
+	A friend picked randomly between a 4, 6, and 8 sided die and only told you they rolled a 3. What is the probability they rolled the 4-sided die? If they roll again with the same die, what is the probability they roll a 5?
+\end{problem}
+
+\begin{problem}
+	Given the distribution of \(X|\Theta\) and \(\Theta\), what is the distribution of \(X\)? What is the distribution of \(\Theta |X\)?
+\end{problem}

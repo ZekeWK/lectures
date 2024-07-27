@@ -1,0 +1,61 @@
+\subsection{What is probability?}
+
+\begin{definition}[Outcome]
+	An outcome is a possible result form an experiment. They are mutually exclusive, and contain all relevant data about the result.
+\end{definition}
+
+\begin{definition}[Sample Space]
+	The sample space, denoted \(\Omega\), of an experiment is the set of all possible outcomes.
+\end{definition}
+
+\begin{definition}[Event]
+	An event is a subset of the sample space. We say it occurs if the outcome is an element in the event.
+\end{definition}
+
+\begin{definition}~
+	\begin{itemize}
+		\item The complementary event, \(A^*\) of \(A\) is the complement of \(A\)
+		\item The union of the events \(A\) and \(B\) is the set \(A \cup B\) 
+		\item The intersection of the events \(A\) and \(B\) is the set \(A \cap B\) 
+		\item The events \(A\) and \(B\) are mutually exclusive if they are disjoint, \(A \cap B = \emptyset\) 
+	\end{itemize}
+\end{definition}
+
+\begin{obs}
+	The terms from probability theory will be used interchangeably with their set theoretic counterparts.
+\end{obs}
+
+\begin{definition}[Probability measure]
+	A probability measure \(P( \cdot )\) is a function from an event to a real number which follows ``Kolmogorov's System of Axioms'':
+	\begin{enumerate}[leftmargin = 3em, wide=1em, label={Axiom \arabic*:}]
+		\item If \(A\) is any event, then \(0 \leq P(A) \leq 1\) 
+		\item If \(\Omega \) is the entire sample space, then \(P(\Omega ) = 1\) 
+		\item If \(A\), \(B\), \(\dots \)  is a finite or infinite sequence of mutually exclusive events, then \(P(A \cup B \dots) = P(A) + P(B) + \dots  \)
+	\end{enumerate}
+	There are often multiple reasonable probability measures, but this allows us to easily work with any of them.
+\end{definition}
+
+\begin{example}[Frequency probability measure]
+	Given a repeatable experiment we define the frequency probability measure is the relative frequency of the event.
+\end{example}
+
+\begin{example}[Other probability measure]
+	Often probability measures can be subjective. For example, what was the probability of a soccer match ending the way it did? We can not recreate it exactly, and so there is no way to use the frequency probability measure. Instead it would depend on who you asked. As long as their probability concurs with Kolmogorov's axioms, we can work with it! 
+\end{example}
+
+\begin{corollary}[Basic Rules]
+	From the axioms it can be proven that
+	\begin{itemize}
+		\item \(P(A^*) = 1 - P(A)\) 
+		\item \(P(\emptyset ) = 0\)
+		\item \(P(A) + P(B) = P(A \cup B) - P(A \cap B)\) 
+	\end{itemize}
+\end{corollary}
+
+\begin{definition}[Discrete and continuous sample space]
+	If a sample space is either finite or countably infinite it is discrete. Otherwise, it is continuous.
+\end{definition}
+
+\begin{example}
+	The different outcomes of a 6 sided dice are discrete while its exact landing spot is continuous. Note that the same experiment may have different sample spaces depending on what you are studying.
+\end{example}

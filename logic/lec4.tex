@@ -1,0 +1,88 @@
+\begin{definition}[Krets]
+	En logisk krets är ett annat sätt skriva påståenden. Man låter några påståenden representeras med variabler, och använder sedan konjunktioner och negationer för att skapa ett nytt påstående. Noderna är
+
+	\begin{circuitikz} \draw
+		(0,0) node[not port] (not) {}
+		(0,-1) node[below] {``inte''}
+		(4,0) node[and port] (and) {}
+		(3.5,-1) node[below] {``och''}
+		(8,0) node[or port]  (or)  {}
+		(7.5,-1) node[below] {``eller''}
+		(12,0) node[xor port]  (xor)  {}
+		(11.5,-1) node[below] {``antingen eller''};
+	\end{circuitikz}
+	
+	\noindent
+	De kopplas ihop genom att dra en linje från det högra utvärdet på en nod till det vänstra invärdet.
+\end{definition}
+
+\begin{problem}
+	Vilka av påståendena \(A, B, C\) ska vara sanna för att \(y\) ska vara sann?
+
+	\begin{circuitikz} \draw
+		(0,4) node (A) {\(A\)}
+		(0,2) node (B) {\(B\)}
+		(0,0) node (C) {\(C\)}
+		(3,3) node[and port] (and) {}
+		(3,1) node[xor port] (xor) {}
+		(6,2) node[or port] (or) {}
+		(8,2) node (y) {\(y\)}
+		(A) -- (and.in 1)
+		(B) -- (and.in 2)
+		(B) -- (xor.in 1)
+		(C) -- (xor.in 2)
+		(and.out) -- (or.in 1)
+		(xor.out) -- (or.in 2)
+		(or.out) -- (y);
+	\end{circuitikz}
+\end{problem}
+
+\begin{problem}
+	Rita upp en egen krets för påståendet ``Antingen \(A\) och \(B\) eller \(C\)''.
+\end{problem}
+
+\begin{problem}
+	I en masugn måste man bestämma huruvida värmen ska vara antingen på eller av. I en förenklad model säger vi att värmen ska vara på om temperaturen är under 1000\textdegree~eller om den är inställd på ``maximal effekt''. Så klart måste värmen vara avstängd om ''Nödstopp`` knappen är aktiverad. Skapa en logisk krets för detta.
+\end{problem}
+
+
+\section*{Att bygga en miniräknare}
+\begin{problem}
+	Ställ upp additionerna med binära tal:
+	\begin{enumerate}[label=\alph*)]
+		\item \(1_2 + 11_2\) 
+		\item \(101_2 + 1010_2\) 
+		\item \(111_2 + 1_2\) 
+	\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+	Vi vill beräkna summan av två ensiffriga binära tal. Vi har påståendena ``Ena talet är \(1_2\)'' och ``Andra talet är \(1_2\)'' (istället för \(0_2\)). Hur kan man skriva påståendena ``Andra siffran i summan är \(1_2\)'' respektive ``Första siffran i summan är \(1_2\)''. Rita en krets för dessa!
+\end{problem}
+
+\begin{problem}
+	Nu vill vi bestämma en godtycklig siffra i det binära talet. Vi vet motsvarande siffror i termerna och har påstående för att dessa är ettor. Vi har också ett påstående för om det finns en ``minnesetta'' från siffran innan. Rita en krets för om siffran är 1 och om den leder till en ``minnesetta''.
+\end{problem}
+
+\begin{problem}
+	Skapa en symbol för din tidigare krets, en förkortning där bara invärde och utvärde syns men logiken blir samma som tidigare. Sätt ihop dessa till att kunna beräkna summan av två stycken fyra bitars tal.
+\end{problem}
+
+\begin{problem}[Extra]
+	Hur kan vi bäst representera negativa tal? Fungerar det i vår krets? Kan vi göra det på ett sätt som fungerar i vår krets?
+\end{problem}
+
+\begin{problem}[Extra]
+	Logiska kretsar kan inte spara någon information, men i datorer vill vi kunna göra detta. Låt oss utvärdera samma krets flera gånger, men låta ett av invärdena påverkas av ett av förra utvärderingens utvärden. Notera att vi fortfarande har vanliga logiska kretsar, men kan ha ``minne'' genom in- och utvärdena. 
+
+	För att förtydliga notationen kan vi skriva vårt par av invärde och utvärde som en symbol (kanske en kvadrat?). För att förenkla kan vi göra att invärdet (det värde minnet ger ifrån sig) är samma som förra utvärderingen om utvärdet (det värde minnet fick in) var falskt, och motsatsen om det var sant.
+
+	Vad kan vi skapa med detta? Kanske en binär räknare som ökar varje utvärdering? Eller ett stort lager av minne där vi kan välja vilken vi får ut?
+\end{problem}
+
+
+% \section{Att bygga ett RAM}
+% Nu kommer vi gå aningen bortom vanlig logik för att kunna bättre beskriva datorer. Datorer gör inte allt i logisk krets en gång, utom de använder minne som inputs i sina kretsar som de även kan ändra på. Låt oss göra något liknande.
+% 
+% Vi lägger till en extra input

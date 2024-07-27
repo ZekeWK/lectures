@@ -1,0 +1,197 @@
+\if 0
+	TODO!!!
+- Gör problemen tydligare i vad som menas.
+- Gör första uppgiften på tavlan
+- Skriv ner om att man kan rita dem och använda fysiskt
+- Ha med bild på brädena?
+- Markera viktigast uppgifter med punkt
+- Grupper / Gruppverkan kanske lite överkurs?
+- Sections/subsections blev fel
+
+\fi
+
+\section{Inledning}
+Målet med detta blad är att förstå Burnsides lemma intuitivt, bevisa det, och sedan använda det för att lösa problem 1.1.
+
+\begin{problem} \label{problem:intro}
+	En leksaksproducent producerar \(2 \times 2\) glasschackbräden. De 4 rutorna färgas i en av \(k\) färger men i övrigt är de helt symmetriska, även framsida och baksida. Hur många olika sorters schackbräden finns det?
+\end{problem}
+
+\section{Intuition}
+\begin{sats}[Burnsides lemma (intuition)] % Vidare utveckla
+	Vi betraktar en mängd objekt och en mängd transformer (förändringar) samt deras sammansättningar och inverser. Vi säger att två objekt är av samma sort om de kan transformeras till varandra.
+
+	\textit{\textbf{Antalet olika sorter av objekt är lika med det genomsnittliga antalet objekt som inte ändras av en transform.}}
+\end{sats}
+
+\begin{exempel}
+	I problem \ref{problem:intro} är mängden objekt alla \(k^4\) olika schackbräden. De olika transformerna är de 8 sätt du kan rotera schackbrädet i 3 dimensioner.
+\end{exempel}
+
+\begin{problem}
+	Applicera Burnsides lemma på problemet!
+\end{problem}
+
+\subsection{Bevis (intuition)}
+Beviset går ut på att räkna antalet kombinationer av objekt och transformer sådana att transformen inte ändrar objektet. Vi gör det på två olika sätt och får då vår likhet. Försök förstå varje steg, och prata med en kamrat!
+
+\begin{problem}
+	För varje transform i problem \ref{problem:intro}, hur många objekt finns det som inte ändras av den? Vilken del av satsen motsvarar detta (nästan)?
+\end{problem}
+
+\begin{problem}
+	I problem \ref{problem:intro}, ändras ett glasschackbräde av en transform om den är symmetrisk längst den? Är ett glasschackbräde symmetriskt längst en transform om det inte ändras av den?
+\end{problem}
+
+\begin{problem} \label{problem:transform_relation} 
+	Vad är relationen mellan antalet transformer som inte påverkar ett objekt, och antalet objekt av samma sort?
+
+	Tips! Pröva för problem \ref{problem:intro} med några utvalda schackbräden!
+\end{problem}
+
+\begin{problem}
+	För alla objekt av samma sort, vad är summan av antalet transformer som inte ändrar objekten?
+
+	Dubbelkolla! Svaret borde vara särskilt fint. Tips! Använd relationen från problem \ref{problem:transform_relation}.
+\end{problem}
+
+\begin{problem}
+	För alla objekten, vad är summan av antalet transformer som inte påverkar objekten? Vad motsvarar det i problem \ref{problem:intro}?
+\end{problem}
+
+\begin{problem}
+	Med hjälp av svaren från tidigare uppgifter, formulera Burnsides lemma!
+\end{problem}
+
+\newpage
+\section{Applicering}
+Här följer några problem som man kan använda Burnsides lemma på.
+
+\begin{problem}
+	I spelet Pentago (2 player edition), spelar man 5 i rad på ett \(6 \times 6\) bräde. Men det finns en twist, varje tur väljer man en av de fyra kvadranterna som roteras.
+
+	Bestäm antalet möjliga konfigurationer av kulor som inte kan föras till varandra genom att rotera de olika kvadranterna. (Räkna på alla sätt man kan lägga kulorna \textbf{inte} bara de som kan uppstå när man spelar).
+\end{problem}
+
+\begin{obs}
+	Visste ni att Burnsides lemma ofta kallas ``lemmat som inte är Burnsides''?
+\end{obs}
+
+\begin{problem}
+	Du producerar 4-sidiga tärningar, men istället för siffror finns det på varje sida en prick i en av \(k\) färger. Antalet och konfigurationen av vardera prick kan vara olika mellan tärningar. Hur många olika möjliga tärningar finns det? 
+
+	Kontrollräkna för \(k=2\).
+\end{problem}
+
+\begin{problem}
+	Ett företag vill sälja oktaedrar med färgade sidor. Hur många skilda oktaedrar kan de ha i sortimentet om de använder \(k\) olika färger för att färglägga de 8 sidorna, och motsatta sidor måste ha samma färg?
+
+	Tips! Om du för vardera par av motsatta sidor, drar en linje mellan deras center, kan du byta plats på axlarna hur du vill på exakt ett sätt. % Förtydliga
+\end{problem}
+
+\begin{problem}
+	Du har tillgång till (ett oändligt antal) genomskinliga plastkvadrater i färgerna rött och grönt. Genom att klistra ihop röda och/eller gröna kvadrater tillverkar du leksaksschackbräden. Varje leksaksschackbräde har \(3 \times 3\) rutor (och består alltså av nio ihopklistrade kvadrater). Till skillnad från vanliga schackbräden så tillåter du att angränsande kvadrater har samma färg.
+	\begin{enumerate}[label={\alph*)}]
+		\item Hur många distinkt olika sådana leksaksschackbräden kan du producera? (Två schackbräden räknas som samma om de ser likadana ut efter att det ena schackbrädet roterats och/eller vänts upp och ner.)
+		\item Hur många distinkt olika leksaksschackbräden kan du producera om varje schackbräde måste innehålla exakt fyra röda kvadrater?
+		\item Hur många distinkt olika leksaksschackbräden kan du producera om varje schackbräde måste innehålla minst fyra röda kvadrater?
+	\end{enumerate}
+	
+\end{problem}
+
+% Några fler?
+
+\newpage
+
+\section{Formalisering}
+Det intuitiva ``beviset'' ger förhoppningsvis en intuition, men när matematiker vill formalisera beviset används något kallat gruppverkan. Det är överkurs, men kan vara kul att höra! Försök så mycket du vill, det är helt okej att gå tillbaka till uppgifterna! Bevis på problemen behöver inte vara formella, men försök gärna skriva ner så mycket det går!
+
+\begin{definition}[Grupp]
+	En \textit{grupp} \(G\) är en mängd \(M\) tillsammans med en operator \(\star \) så att:
+  \begin{enumerate} % Omformulera!
+    \item För alla två element \(a, b\) i \(M\) definierar \( \star \) ett element \(a  \star b\) som också är i \(M\).
+    \item För alla tre element \(a, b, c\) i \(M\) är \((a  \star b)  \star c = a  \star (b  \star c)\).
+    \item Det finns ett \textit{identitets element} \(e\) så att för alla \(a\) i \(M\) så är \(a  \star e = e  \star a = a\).
+    \item Varje element \(a\) i \(M\) har en \textit{invers}  \(a ^{-1}\) så att \(a  \star a^{-1} = a^{-1}  \star a = e\).
+  \end{enumerate}
+\end{definition}
+
+\begin{exempel}
+	Det finns många olika grupper, till exempel:
+	\begin{itemize}
+		\item Symmetri grupper av symmetrier
+		\item Heltalen under addition
+		\item Rationella talen under multiplikation (varför inte heltalen?)
+		\item Drag på en Rubiks kub.
+	\end{itemize}
+	
+\end{exempel}
+
+\begin{obs}
+	Man skriver sällan ut \(\star\) utom, likt multiplikation i reella tal, antar man att det menas ändå.
+\end{obs}
+
+\begin{problem}
+	Varför är dragen på en Rubiks kub en grupp? Utgå från definitionen!
+\end{problem}
+
+\begin{problem}
+	Visa att det bara kan finnas ett identitetselement.
+\end{problem}
+
+\begin{definition}[Gruppverkan]
+	Låt \(X\) vara en mängd, och \(G\) en grupp. Vi säger att ett element \(g \in G\) verkar på ett element \(x \in X\), sådan att \(g \star x\) blir ett element i \(X\). Gruppverkan måste följa att:
+	\begin{itemize}
+		\item \(e \star x = x\) 
+		\item \(a \star (b \star x) = (a \star b) \star x\)
+	\end{itemize}
+\end{definition}
+
+\begin{problem}
+	Vad i problem \ref{problem:intro} är gruppen \(G\), och vad är mängden \(X\)?
+\end{problem}
+
+\begin{definition}[Orbital]
+	En orbital till ett element \(x \in X\) är alla element i \(X\) sådan att \(G\) kan verka \(x\) till det. Alltså, för ett givet \(x \in X\) 
+	\[
+		Gx = \left\{gx : g \in G\right\}
+	\]
+\end{definition}
+
+\begin{problem}
+	Vad motsvarar orbitaler i problem \ref{problem:intro}?
+\end{problem}
+
+
+\begin{problem}
+	Visa att \(G\) kan verka på \textbf{varje} element i en orbital till varje annat.
+\end{problem}
+
+\begin{sats}
+	Låt \(G\) vara en grupp som verkar på en mängd \(X\). Då gäller att
+	\[
+		|G| = |Gx|  \cdot |\left\{g \in G | gX = X\right\}|
+	\] 
+	där absolutbelopp motsvarar antalet element. 
+\end{sats}
+
+\begin{obs}
+	Det kan kännas naturligt, då du får varje \(g \in G\) som tar \(x\) till \(y\), kan använda någon av de \(g\) som inte påverkar också. Mer precist bevis är dock överkurs.
+\end{obs}
+
+\begin{problem}
+	Med dessa nya begrepp, hur skulle Burnsides lemma kunna se ut?
+\end{problem}
+
+\begin{sats}[Burnsides lemma (formellt)]
+	För en grupp \(G\) som verkar på en mängd \(X\), gäller att mängden olika orbitaler är lika med
+	\[
+		\frac{1}{|G| } \sum_{g \in G} \left\{x \in X: gx = x\right\}.
+	\]
+\end{sats}
+
+\begin{problem}
+	Försök pussla ihop beviset av den formella version av Burnsides lemma.
+\end{problem}
+
+% TODO! Lägg till fler problem här!

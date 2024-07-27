@@ -1,0 +1,187 @@
+\section{Gaussian Integers}
+
+\begin{definition}[Gaussian integer]
+  A complex number \(z \in \mathbb{C} \) is a Gaussian integer if 
+  \[
+    \Re (z), \Im(z)  \in \mathbb{Z}
+  \]
+  where \(\Re\) and \(\Im\) represent the real and imaginary parts respectively. Let 
+  \[
+    \mathbb{Z} \left[i\right]
+  \]
+  represent the set of all Gaussian integers.
+\end{definition}
+
+\begin{definition}[Norm]
+  The norm of a Gaussian integer, \(z = a +bi\) where \(a, b \in \mathbb{Z} \), has norm
+  \[
+    N(z) = a^2 + b^2.
+  \]
+\end{definition}
+
+\begin{problem}
+  Calculate \(N\left(3 + i\right)\).
+\end{problem}
+
+\begin{problem}
+  Let \(z, w \in \mathbb{Z} \left[i\right]\). Show that 
+  \[
+    N(z \cdot w) = N(z) \cdot N(w).
+  \]
+  Note! This property will be of the utmost importance in the next section.
+\end{problem}
+
+\begin{problem} Calculate \(N\left((3+i)  \cdot (4-i)\right)\).
+\end{problem}
+
+\begin{definition}[Divisibillity]
+  A Gaussian integer, \(z\), is divisible by another Gaussian integer, \(w\), if there exists a third Gaussian integer, \(d\), such that
+  \[
+    z = d  \cdot w.
+  \]
+\end{definition}
+
+\begin{problem}
+  Is \(2\) divisible by any Gaussian integer \(z\) with \(1 < N(z) < 4\)?
+\end{problem}
+% \begin{corollary}[Rules of operations] 
+%   Let \(z = a +bi\) and \( w = c + di\) with \(a, b, c, d \in \mathbb{Z} \). The following rules apply:
+%   \begin{itemize}
+%       \item \(z + w= a +bi + c + di = (a+c) + (b+d)i\) 
+%       \item \(z  \cdot w = (a + bi) \cdot (c + di) = (ac - bd)\) 
+%   \end{itemize}
+% \end{corollary}
+
+\section{Gaussian Primes}
+
+\begin{definition}[Units]
+  A unit is an element with a multilicative inverse. In the Gaussian integers the units are
+  \[
+    1, i, -1, -i.
+  \]
+  
+\end{definition}
+
+\begin{definition}[Gaussian prime]
+  A non-unit Gaussian integer is a prime if it is only divisible by units or unit multiples of itself.
+\end{definition}
+
+% Add some minor problems before
+
+\begin{problem}
+  Prove that not all primes in \(\mathbb{Z} \) are primes in \(\mathbb{Z} \left[i\right]\).
+\end{problem}
+
+\begin{problem}
+  Prove that all Gaussian integers with prime norms are Gaussian primes.
+\end{problem}
+
+\begin{theorem}[Fermat's theorem on sums of squares]
+  A prime \(p > 2\) can be written as the sum \(a^2 + b^2\) where \(a, b \in \mathbb{Z} \) iff \(p \equiv 1 \mod 4\).
+\end{theorem}
+
+\begin{problem}
+  Show that for all primes, \(p\), in \(\mathbb{Z} \) with \(p \equiv 1 \mod 4\), there exists a Gaussian integer with norm \(p\).
+\end{problem}
+
+
+\begin{problem}
+  Prove that if \(p\) is a prime in \(\mathbb{Z} \) and \(p \equiv 3 \mod 4\), it is a Gaussian prime.
+\end{problem}
+
+\begin{corollary}[Categories of Gaussian primes]
+  For each prime, \(p \), in the integers, it falls under one of the following categories: 
+  \begin{itemize}
+    \item If \(p \equiv 1 \mod 4\), then there exists a Gaussian prime, \(z\), such that \(N(z) = p\).
+    \item If \(p \equiv 3 \mod 4\), then \(p\) is itself a Gaussian prime.
+    \item If \(p = 2\), then \(p = (1+i)(1-i) \);
+  \end{itemize}
+\end{corollary}
+
+\begin{theorem}[Euclid's Lemma for Gaussian Primes]
+  Let \(p\) be a Gaussian prime and \(a, b, \in \mathbb{Z}[i] \). If \(p\) divides \( a \cdot b\) then \(p\) divides one of \(a\) or \(b\).
+\end{theorem}
+
+\begin{problem}
+  Show that all Gaussian primes are in fact unit multples of the previously mentioned categories.
+\end{problem}
+
+\begin{theorem}[Lagrange's Lemma]
+  If a prime in the integers, p, is congruent to 1 mod 4, then there exists an \(n\) such that \(p | n^2 + 1\).
+\end{theorem}
+
+
+\begin{problem}
+  Without using anything proven by Fermat's theorem on sums of squares, prove it.
+\end{problem}
+
+\begin{problem}
+  Show that if an integer can be written as the sum of two squares in more than one way, then it is not prime.
+\end{problem}
+
+% TODO! Use \mathbb{P}[i]
+
+% \begin{problem}
+%   We previously relied on the sum of squares theorem by fermat,
+%   \[
+%     p \equiv 1 \mod 4 \Leftrightarrow (\exists ~ a,b) ~~ p = a^2 + b^2
+%   \]
+%   for any prime \(p\). Therefore we will prove it using 
+%   
+% \end{problem}
+% Add in euclids algorithm as well...
+% Prove fermats theorem on usms of two squares using gaussian primes!!!
+
+% We also need a problem with euclides theorem I think to make everything is contained?
+
+% Make sure all logic here is contained, or at least is contained in my head.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \section*{What should be taught?}
+% \begin{itemize}
+%   \item Gaussian integers?
+%   \item Definition - Using divisibility in complex
+%   \item Similarities to real primes?
+%   \item Proofs how they're one to one mapping to primes?
+%   \item Generation?
+%   \item Some problems coupled to when we where generating them?
+%   \item The big goal is to find the three cases under which they can all fall.
+%   \item Maybe this should be the whole point of it. A very very small introduction, and then tackling these cases one by one?
+%   \item The problems would be
+%   \begin{itemize}
+%     \item Prove that those with norm a prime must be primes
+%     \item Prove that those in reals prime with congruence are primes in the complex
+%     \item Prove that these are the only ones? % NEED to learn proof
+%   \end{itemize}
+%   \item The ways factors of two squares interact!
+%   % NEED to learn congruence prime theorem
+%   
+% \end{itemize}
+%
+%
+% The lecture should have the following definitions:
+% Definition and repetion of basic aritmetic
+% Working lightly with some Gaussian primes
+% Proofs of when they are Gaussian primes
+% Working somewhat harder with the Gaussian primes

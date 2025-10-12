@@ -134,42 +134,44 @@
 \end{exempel}
 
 \subsection{Problem}
+\setcounter{theorem}{0}
+
+% \begin{problem}
+% 	Vad är definitionsmängden respektive målmängden till funktionerna i exempel \ref{exempel:funktioner}?
+% \end{problem}
 
 \begin{problem}
-	Vad är definitionsmängden respektive målmängden till funktionerna i exempel \ref{exempel:funktioner}?
+	Hur många bijektiva funktioner finns det mellan två mängder med \(n\) element var?
 \end{problem}
+
 
 \begin{problem}
 	Minska definitionsmängden för \(f(x)=x^2\) så att den blir injektiv. Minska målmängden så att den blir surjektiv. Går det för \(g(x) = 1\)?
 \end{problem}
 
 \begin{problem}
-	Vilka potensfunktioner, alltså \(f(x) = x^n\) där \(n\) är ett positivt heltal, är surjektiva? Injektiva?
+	Vilka potensfunktioner, alltså \(f(x) = x^n\) där \(n\) är ett positivt heltal, är surjektiva? Vilka är injektiva?
 \end{problem}
 
 \begin{problem}
 	Hitta en inverterbar funktion från \((0, 1)\), intervallet mellan \(0\) och \(1\), till reella talen.
 \end{problem}
 
+% \begin{problem}
+% 	Hitta inversen till:
+% 	\begin{itemize}
+% 		\item \(f(x) = x^3\) 
+% 		\item \(f(x) = \sqrt{3x - 1}\) 
+% 		\item \(f(x) = \begin{cases} x^3, & x < 0 \\ \sqrt{3x-1}, &x \geq 1  \end{cases} \)  % TODO Skapa en svår!
+% 	\end{itemize}
+% \end{problem}
+
 \begin{problem}
-	Hitta inversen till:
-	\begin{itemize}
-		\item \(f(x) = x^3\) 
-		\item \(f(x) = \sqrt{3x - 1}\) 
-		\item \(f(x) = \begin{cases} x^3, & x < 0 \\ \sqrt{3x-1}, &x \geq 1  \end{cases} \)  % TODO Skapa en svår!
-	\end{itemize}
+	Är en injektiv funktion sammansatt med en injektiv funktion injektiv? Är en surjektiv funktion sammansatt med en surjektiv funktion surjektiv?
 \end{problem}
 
 \begin{problem}
-	Är en injektiv funktion av en injektiv funktion injektiv? Är en surjektiv funktion av en surjektiv funktion surjektiv?
-\end{problem}
-
-\begin{problem}
-	Låt \(f(x)\) vara injektiv men inte surjektiv, och \(g(x)\) vara surjektiv men inte injektiv. 
-	\begin{enumerate}[label={\alph*)}]
-		\item Kan \(h(x) = g(f(x))\) vara inverterbar? Ge ett exempel eller motbevisa.
-		\item Vad gäller för \(k(x) = f(g(x))\)?
-	\end{enumerate}
+	Låt \(f(x)\) vara injektiv men inte surjektiv, och \(g(x)\) vara surjektiv men inte injektiv. Vilka av \(h(x) = g(f(x))\) och \(k(x) = f(g(x))\) kan vara inverterbara givet något val av \(f\) och \(g\).
 \end{problem}
 
 \begin{problem}
@@ -180,30 +182,37 @@
 	Låt \(f(x) = x^2\) vara en injektiv funktion med värdemängd alla \textbf{positiva} reella tal. Beskriv alla möjliga definitionsmängder! (Definitionsmängden behöver inte vara sammanhängande)
 \end{problem}
 
+% \begin{problem}
+% 	Hur ser grafen till en kontinuerlig injektiv funktion ut? Vad utmärker dem? Prata med en kamrat! Vad händer om den dessutom är surjektiv?
+% \end{problem}
+
 \begin{problem}
-	Hur ser grafen till en kontinuerlig injektiv funktion ut? Vad utmärker dem? Prata med en kamrat! Vad händer om den dessutom är surjektiv?
+	Motivera att \(f(x) = \sum_{k=0} ^{101} (-x)^k\) är surjektiv. (Tips! Använd att den är kontinuerlig)
 \end{problem}
 
 \begin{problem}
-	Visa att \(f(x) = \sum_{k=0} ^{101} (-x)^k\) är surjektiv! (Tips! Använd att den är kontinuerlig)
+	Motivera att \(f(x) = \sum_{k=0} ^{100} (-x)^k\) inte är surjektiv. (Tips! Använd att den är kontinuerlig)
 \end{problem}
 
 \begin{problem}
-	Visa att \(f(x) = \sum_{k=0} ^{100} (-x)^k\) inte är surjektiv! (Tips! Använd att den är kontinuerlig)
-\end{problem}
-
-\begin{problem}
-	Visa att funktionen
+	Motivera att funktionen
 	\[
 		f(x) = x^{101} - \frac{1}{x} + 2^{x^2 + 2}
 	\]
-	definierad på de \textbf{positiva} reella talen, är inverterbar. (Tips! Rita den!)
+	definierad på de \textbf{positiva} reella talen, är inverterbar.
+\end{problem}
+
+\begin{problem}
+	Hur ser grafen ut för funktion \(f(x) = \begin{cases} 1, & x \text{ rationellt} \\ 0, & x \text{ irrationellt} \end{cases} \) ?
 \end{problem}
 
 \begin{problem}
 	Låt \(f(x)\) vara en funktion från talen \(1,\dots, n\), till talen \(1, \dots ,n\). Varför är den surjektiv om och endast om den är injektiv?
 \end{problem}
 
+\begin{problem}[Väldigt svår]
+	Visa att det inte kan finnas en surjektiv funktion från en mängd till mängden av dess delmängder.
+\end{problem}
 
 
 %   - Finns det ett värde som får denna? (För olika funktioner)
@@ -218,7 +227,7 @@
 %   - Bestäm invers
 %   - Visa att det finns en invers
 
-
+\newpage
 
 
 
@@ -233,13 +242,14 @@ Ibland får man inte givet vad en funktion är, utom måste lista ut det! Det sk
 		(x,y): f(x) + f(y) = x + y
 	\]
 	\textbf{för alla} värden på \(x, y\). Vi försöker alltså inte hitta värden på \(x, y\) som i en vanlig ekvation, utom vet att det gäller för alla, och vill hitta funktionen! 
-	I den här funktionalekvationen, kan vi sätta in \(x=z, y=-z\) (eftersom vi får välja fritt bland \(x, y\)), och får
+	I den här funktionalekvationen, kan vi sätta in \(x=z, y=z\) (eftersom vi får välja fritt bland \(x, y\)), och får
 	\[
-		(z, -z) : f(z) + f(z) = z + z \Rightarrow f(z) = z.
+		(z, z) : f(z) + f(z) = z + z \Rightarrow f(z) = z.
 	\]
 \end{exempel}
 
 \subsection{Tips!} % TODO! Utveckla
+\setcounter{theorem}{0}
 \begin{tips}[Substitution]
 	Sätt in värden på parametrarna som ger bättre samband. Det är ofta bra att pröva \(\left(x, x\right)\), \((x, -x)\), \((0, 0)\), \((x, 0)\) och \((0, y)\) 
 \end{tips}
@@ -253,7 +263,7 @@ Ibland får man inte givet vad en funktion är, utom måste lista ut det! Det sk
 \end{tips}
 
 \begin{tips}
-	Utnyttja injektivitet! Injektivitet gör att du kan ``skala bort'' funktionen, alltså att \(f(x) = f(x)\) ger \(x = y\).
+	Utnyttja injektivitet! Injektivitet gör att du kan ``skala bort'' funktionen, alltså att \(f(x) = f(y)\) ger \(x = y\).
 \end{tips}
 
 \begin{tips}
@@ -264,10 +274,31 @@ Ibland får man inte givet vad en funktion är, utom måste lista ut det! Det sk
 	Skapa en ny funktion, definierad från den givna, som är enklare att hantera.
 \end{tips}
 
+\begin{obs}
+	\(\mathbb{R} \) är mängden av alla reella tal, $\mathbb{Q}$ är mängden av alla rationella tal (tal som kan skrivas som en kvot av två heltal), och \(\mathbb{Z} \) är mängden av alla heltal. Om \(A, B\) är två mängder så kan vi skriva \(f: A \rightarrow B\), att \(f\) är en funktion från \(A\) till \(B\).
+\end{obs}
+
+
 
 \subsection{Problem}
+\setcounter{theorem}{0}
 \begin{problem}
-	Bestäm \(f(x) : \mathbb{R} \rightarrow \mathbb{R} \) om
+	Bestäm \(f : \mathbb{R} \rightarrow \mathbb{R} \) om
+	\[
+		f(x) + f(y) = 2.
+	\]
+\end{problem}
+
+\begin{problem}
+	Bestäm \(f : \mathbb{R} \rightarrow \mathbb{R} \) om
+	\[
+		f(x) - f(y) = x-y.
+	\]
+	och \(f(3) = 6\).
+\end{problem}
+
+\begin{problem}
+	Bestäm \(f : \mathbb{R} \rightarrow \mathbb{R} \) om
 	\[
 		2f(x) - f(-x) = x
 	\]
@@ -279,6 +310,12 @@ Ibland får man inte givet vad en funktion är, utom måste lista ut det! Det sk
 	\]
 \end{problem}
 
+\begin{problem}
+	Beskriv alla funktioner \(f: \mathbb{R} \rightarrow \mathbb{R}, g : \mathbb{R} \rightarrow \mathbb{R}  \) sådana att
+	\[
+		f(x) \cdot g(x) = 0.
+	\]
+\end{problem}
 
 \begin{problem}
 	Låt 
@@ -289,12 +326,12 @@ Ibland får man inte givet vad en funktion är, utom måste lista ut det! Det sk
 \end{problem}
 
 
-\begin{problem}[SMT kval 2007]
-	Vilka funktioner \(f(x)\) uppfyller likheten
-	\[
-		x(f(X) + f(-x) + 2) + 2f(-x) = 0
-	\]
-\end{problem}
+% \begin{problem}[SMT kval 2007]
+% 	Vilka funktioner \(f(x)\) uppfyller likheten
+% 	\[
+% 		x(f(x) + f(-x) + 2) + 2f(-x) = 0
+% 	\]
+% \end{problem}
 
 \begin{problem}[SMT final 2008]
 	Funktionen \(f(x)\) har egenskapen att \(\frac{f(x)}{x} \) är växande för \(x>0\). Visa att (för alla \(x, y > 0\))
@@ -309,3 +346,12 @@ Ibland får man inte givet vad en funktion är, utom måste lista ut det! Det sk
 		f(f(x+y) - f(x-y)) = xy.
 	\]
 \end{problem}
+
+\begin{problem}
+	Låt \(f: \mathbb{Q} \rightarrow \mathbb{Q} \) vara en funktion som uppfyller att
+	\[
+		f(x) \cdot f(y)=f(x+y)
+	\]
+	och \(f(0) =2\). Hitta alla möjliga \(f\).
+\end{problem}
+

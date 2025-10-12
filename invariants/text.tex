@@ -1,0 +1,150 @@
+% Tema: Vad:bevaras vid förändring?
+% Finns alltid något som är kvar, detta kallas en invariant
+% Tänker att man kanske delar upp i teman? Typ färgläggning, udda jämnt, 
+% 
+% Man kanske vill typ dela upp i först invarianter, sedan monovarianter?
+% 
+% Tänker att det vore nice att vissa mer traditionellt matte, andra mer grafiska och kul?
+% 
+% Kanske dela upp i grupper (och visa att det stannar?) Diskreta vs kontinuerliga?
+
+
+
+% \section*{Inledning}
+% En \textbf{invariant} är något som aldrig ändras eller bevaras, det är \textit{inte varierarande}. Ofta när vi studerar saker i matematiken är det viktigt att veta vad som bevaras eller alltid är samma, det som är \textit{invariant}. Genom att studera dessa \textit{invarianter} kan vi snabbt göra vissa scenarion omöjlig eller kännas oss trygga i att något alltid stämmer. Invarianter kan dock se ut på väldigt många sätt, så här följer många exempel. Tips: Samma tema innebär liknande invarianter.
+\textbf{\large{Inledning:}} \\
+En \textbf{invariant} är något som alltid är samma eller aldrig ändras, något som \textit{inte varierar}. I följande problem finns det något av den stilen. Problemen är numrerade i grupper och svårighetsgraden öker generellt inom en grupp, men inte nödvändigtvis mellan grupperna.
+
+
+\setcounter{theorem}{0}
+\setcounter{section}{\thesection+1} % Jämt & Udda
+\textbf{\large{Problem:}} \\
+\vspace{-4ex}
+
+\begin{problem}
+	Tufva har en samling med 168 badankor som hon har ställt upp på sin trofehylla. Hon har bjudit hem 17 vänner varav några är tjuviga och resten är generösa. En tjuvig vän kommer att stjäla exakt en badanka från Tufvas samling medan en generös vän ger exakt en extra badanka till den. När vännerna har åkt hem tycker hon sig räkna till 170 badankor, kan det stämma?
+\end{problem}
+
+\begin{problem}
+	Efter ett par sådana bjudningar har Tufva 168 badankor igen och hennes vän Christoffer har 169. Genom en serie spratt, upptåg och grandiosa planer själ de badankor fram och tillbaka från varandra. Kommer de någonsin att ha exakt lika många badankor?
+\end{problem}
+
+\begin{problem}
+	Efter år av liknande konflikter kommer Tufva på en utmaning till Christoffer. Hon lägger ut ett \(9 \times 9\) rutnät av badankor som alla pekar mot henne. Christoffer får välja en badanka och måste då vända alla badankor i samma rad och kolumn med \(180 ^\circ\), utom själva badankan han peka på, åt andra hållet. Om han på något antal drag kan vända på alla badankor så att de pekar från Tufva (och mot honom), så får han alla Tufvas badankor, annars får han ge en badanka till Tufva. Borde han acceptera?
+\end{problem}
+
+\begin{problem}
+	Christoffer råkade dock höra fel, och trodde att det var ett \(10 \times 10\) rutnät. Kommer han, en utmärkt tänkare, att acceptera utmaningen i så fall?
+\end{problem}
+
+\setcounter{theorem}{0}
+\setcounter{section}{\thesection+1} % Mattebattle
+
+\begin{problem}
+	Jesper tycker om att dricka te med mjölk medan Valentina föredrar att dricka mjölk med te istället. För att kunna servera det på det snabbaste möjliga sättet, förbereder de ett glas vatten och ett glas mjölk. Därefter tar Valentina två- tre skedar av mjölk från glaset med mjölk och häller över dem i glaset med te. Efter att det blandats någorlunda väl i båda glasen inser Jesper att han hade fått orättvist mycket av teet och häller ut samma antal skedar i Valentinas glas. Vad blir det mer av nu, mjölk i Jespers glas eller te i Valentinas glas? \end{problem}
+
+\setcounter{theorem}{0}
+\setcounter{section}{\thesection+1} % Färgläggning
+% \begin{problem}
+% 	På vardera av punkterna i triangeln står det en leksaksrobot. När leksaksmakaren klappar med händerna kommer varje robot att gå längs en av linjerna. Visa att de efter 17 klappningar inte kan stå allihopa på samma punkt.
+% \end{problem}
+% 
+% 
+% \begin{figure}[H]
+% 	\centering
+% 	\newcommand*\rows{5}
+% 	\begin{tikzpicture}
+% 			\foreach \row in {0, 1, ...,5} {
+% 					%\draw ($\row*(0.5, {0.5*sqrt(3)})$) -- ($(\rows,0)+\row*(-0.5, {0.5*sqrt(3)})$);
+% 					\draw ($\row*(1, 0)$) -- ($(\rows/2,{\rows/2*sqrt(3)})+\row*(0.5,{-0.5*sqrt(3)})$);
+% 					\draw ($\row*(1, 0)$) -- ($(0,0)+\row*(0.5,{0.5*sqrt(3)})$);
+% 
+% 					\foreach \col in {0, ..., \row} {
+% 							\node at ($\row*(1, 0)+sqrt(3)/2*\col*(0,1)-\col*(1/2,0)$) {\textbullet};
+% 							%\node at ($(\rows/2,{\rows/2*sqrt(3)})+\row*(0.5,{-0.5*sqrt(3)})$) {\textbullet};
+% 							%\node at ($(0,0)+\row*(0.5,{0.5*sqrt(3)})$) {\textbullet};
+% 					}
+% 			}
+% 	\end{tikzpicture}
+% \end{figure}
+\begin{problem}
+ 	På vardera av rutorna på ett enormt \(8 \times 8\) schackbräde står det en leksaksrobot. När leksaksmakaren klappar med händerna kommer varje robot att gå till en av rutorna bredvid (inte diagonalt). Kommer robotarna någonsin att alla samlas på samma ruta?
+\end{problem}
+
+\begin{problem}
+	En leksaksmakare har ett vanligt \(8 \times 8\)-schackbräde och en massa dominobrickor som hen vill täcka det med. Hen kan lägga en dominobricka så att det täcker exakt två närliggande rutor på brädet och hen vill inte att några dominobrickor ska överlappa eller komma utanför. \textbf{(a)} Kan leksaksmakaren täcka hela brädet med dominobrickor? \textbf{(b)} Hen har även ett trasigt brädet som saknar två hörnrutor som sitter diagonalt mot varandra. Kan hen täcka hela det trasiga brädet med dominobrickor?
+\end{problem}
+
+
+\begin{problem}
+	Leksaksmakaren har byggt en stad med \(n\) långa helt raka vägar med olika riktningar. Vägarna korsar varandra 2 och 2 men aldrig 3 i samma punkt. En leksaksbil åker på vägarna och väljer vid varje korsning att åka till höger eller vänster, men inte rakt fram. Visa att bilen aldrig kan ha åkt åt båda hållen på samma väg.
+\end{problem}
+
+\setcounter{theorem}{0}
+\setcounter{section}{\thesection+1} % Mattebattle
+\begin{problem}
+30 mynt ligger i en cirkel: först tre med klave uppåt, sedan tre med krona uppåt, sedan tre med klave uppåt och så vidare. Man får vända på ett mynt vars grannar är av olika sort. Vad är det maximala antalet mynt man kan få att ligga med kronan uppåt genom att vända på myntet på det sättet?
+\end{problem}
+
+\setcounter{theorem}{0}
+\setcounter{section}{\thesection+1} % Bevaring av kvantiteter
+\begin{problem}
+	Filip övar på att dela 1 med en kvot genom att först skrika ut en kvot och sedan skrika ut kvoten som är 1 delat på den. Han gör aldrig något misstag och får därför alltid en applåd efteråt. I närheten sitter fyra flygande flugor i en kvadrat med sidlängd 1. Varje gång Filip skriker ut en kvot kommer 2 flugor som sitter brevid varandra att flytta sig så mycket längre bort från de andra två, men så att de fortfarande sitter i en rektangel. 
+
+	Exempelvis kan Filip skrika ut kvoten \(\frac{3}{2}\) varpå två flugor flyttar sig \(\frac{3}{2}\) gånger så långt bort från de andra två. Efteråt måste han skrika ut \(\frac{2}{3}\) varpå två flugor (samma eller andra) flyttar sig \(\frac{2}{3}\) så långt bort från de andra. Till sist får han en applåd. 
+
+	Visa att flugorna aldrig kommer sitta i en kvadrat med sidlängd 2 när Filip får en applåd.
+\end{problem}
+
+
+\begin{problem}
+	Tre hoppande loppor sitter på ett plan. Varje sekund kan exakt en loppa hoppa och får då röra sig parallelt med linjen som bildas mellan de andra två lopporna. De får hoppa hur långt eller kort de vill (behöver inte vara heltals längd) och i varlfri ordning. Just nu sitter de i punkterna \((0, 0), (0,1)\) och \((1, 0)\). Kan de någonsin förflytta sig så att de sitter i punkterna \((0, 0), (0,2)\) och \((2, 0)\)?
+\end{problem}
+
+\setcounter{theorem}{0}
+\setcounter{section}{\thesection+1}
+\begin{problem}
+	Mellan Lund och Uppsala finns det en tågsträcka som är 600 km och det är 50 tåg utsprida längs sträckan som går åt olika håll. På grund av problem med kommunikationen, och att tågspåret just nu är enkelspårigt, åker tåg längs sträckan i 100 km/t tills de möter ett annat tåg eller kommer fram till någon utav städerna. Om de möter ett annat tåg börjar båda tågen direkt att åka åt andra hållet. Om de kommer fram till en stad så stannar de kvar där. Vad är den längsta tiden det kan från att kommunikationen började strula till att alla tåg har nått en stad?
+\end{problem}
+
+\begin{problem}
+	Två tåg åker mot varandra med hastigheten 100 respektive 200 kilometer i timmen efter att ha börjat på 300 kilmometers avstånd från varandra. Mellan dem flyger en mygga i ofantliga 400 km/t och vänder direkt (alltså på 0 sekunder) när den når ett av tågen. Den börjar vid det långsamma tåget och fortsätter åka fram och tillbaka tills den blir krossad av att tågen åker in i varandra. Hur långt har myggan färdats innan den krossas?
+\end{problem}
+
+
+% \section{Spel}
+% \todo{Kul med spel! Finns i en av Elias PDF:er}
+% \begin{problem} \todo{Fixa}
+% 	Man väljer tal mellan 1 och 10 och den andra får välja tal så att det blir samma. Först att säga tal över visst förlorar.
+% \end{problem}
+
+\setcounter{theorem}{0}
+\setcounter{section}{\thesection+1} % Gott och blandat
+% \begin{problem}
+% 	Leo har skrivit upp
+% 	\begin{align*}
+% 		1 + &\_ \approx ~?&2 + &\_ \approx ~?&3 + &\_ \approx ~? \\
+% 		4 + &\_ \approx ~?&5 + &\_ \approx ~?&6 + &\_ \approx ~? \\
+% 		7 + &\_ \approx ~?&8 + &\_ \approx ~?&9 + &\_ \approx ~? \\
+% 	\end{align*}
+% 	på tavlan och ber Gustaf skriva talen 0 till 9 på varsin linje. Gabriel beräknar sedan vardera summa och ersätter frågetecknet med sista siffran av den (så han kan till exempel skriva upp \(7 + \underline{8} \approx 5\)). Kan Gabriel ha skrivit upp alla tal mellan 0 och 9?
+% \end{problem}
+
+\begin{problem}
+	På 44 stolpar som står i en cirkel sitter det 44 grönsiskor, en på vardera stolpe. Varje femte sekund flyger två stycken grönsiskor från sina stolpar till en intilliggande i motsatta håll (en medsols och en motsols). Kan alla grönsiskorna någonsin samlas på en stolpe?
+\end{problem}
+
+
+% \begin{problem}
+% Kathlen har ett cykelhjul med 4 ventiler placerade jämt med insidan av däcket. De är lite svårtolkade, så hon vet inte när en ventil är öppen eller stängd, men vet hur hon gör för att ändra inställning på en ventil. Hon kan avgöra om det finns en öppen ventil genom att pröva att cykla med hjulet, men vet då inte vilken ventil som är öppen, eller hur många (annat än att minst en är det). Dessutom tappar hon helt koll på åt vilket håll hjulet är och även vad som är höger och vänster på det. Visa att Kathlen ändå kan hitta en strategi med att ändra inställningen på några ventiler och testa som efter maximalt ett bestämt antal försök kommer ha alla ventiler stängda.
+% \end{problem}
+
+% \begin{problem}
+% 	Tre fotbollsspelare, Rebecka, Hanna och Evelina, tränar på ett fält. De står stilla och passar tills någon väljer att skjuta mellan (och förbi) de andra två och ställa sig där bollen landar varpå de fortsätter (de är alla så pass bra att de aldrig missar). Visa att de efter 19 sådana skott inte alla kan stå på samma plats som de började.
+% \end{problem}
+
+
+
+
+% \todo{Vore också kul med några problem kopplade mer direkt till matte. Typ modulo? Typ rotationer och speglingar inte kan ändra area, och rotation väldigt bestämt}
+% \todo{Vore kul att bygga upp till problem lite mer och göra saker mer tydliga. Kanske mer fokus på abc frågor?}
